@@ -1,8 +1,4 @@
 name: poke_poke_dex_flutter
-description: "A new Flutter project."
-
-# Prevent accidental publishing to pub.dev.
-publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -16,23 +12,16 @@ dependencies:
     sdk: flutter
 
   graphql_flutter: ^5.0.0
-  widgetbook: ^3.8.0
-  widgetbook_annotation: ^3.1.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^3.0.0
-  widgetbook_generator: ^3.8.0
 
 flutter:
   uses-material-design: true
-
-  # Enable generation of localized Strings from arb files.
   generate: true
 
   assets:
-    # Add assets from the images directory to the application.
     - assets/images/
