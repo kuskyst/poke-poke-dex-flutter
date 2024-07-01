@@ -1,0 +1,6 @@
+{
+  "appTitle": "poke_poke_dex_flutter",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
