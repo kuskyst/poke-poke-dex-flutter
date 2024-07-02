@@ -21,22 +21,10 @@ class WidgetbookApp extends StatelessWidget {
         child: child,
       ),
       integrations: [ WidgetbookCloudIntegration() ],
-      addons: <WidgetbookAddon>[
-        MaterialThemeAddon(
-          themes: <WidgetbookTheme<ThemeData>>[
-            WidgetbookTheme<ThemeData>(
-              name: 'Light',
-              data: ThemeData.light(),
-            ),
-            WidgetbookTheme<ThemeData>(
-              name: 'Dark',
-              data: ThemeData.dark(),
-            ),
-          ],
-        ),
+      addons: [
         AlignmentAddon(),
         DeviceFrameAddon(
-          devices: <DeviceInfo>[
+          devices: [
             Devices.ios.iPhoneSE,
             Devices.ios.iPhone13,
             Devices.android.samsungGalaxyA50
