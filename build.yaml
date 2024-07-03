@@ -4,7 +4,7 @@ targets:
       graphql_codegen:
         options:
           scopes:
-            - lib/api/**
+            - lib/api/graphql/**
           clients:
             - graphql
             - graphql_flutter
