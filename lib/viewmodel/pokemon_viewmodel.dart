@@ -41,18 +41,16 @@ class PokemonViewModel extends ChangeNotifier {
 
     if (result.hasException) {
       log('GraphQL Exception: ${result.exception.toString()}');
-      return;
-    }
-
-    _pokemons = (result.data!['pokemons'] as List)
+    } else {
+       _pokemons = (result.data!['pokemons'] as List)
         .map((pokemon) => Pokemon(
-              id: pokemon['id'],
-              name: pokemon['name'],
-              number: pokemon['number'],
-              image: pokemon['image']
-            ))
-        .toList();
+           id: pokemon['id'],
+          name: pokemon['name'],
+          number: pokemon['number'],
+          image: pokemon['image']
+        )).toList();
 
     notifyListeners();
+    }
   }
 }
