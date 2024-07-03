@@ -44,7 +44,7 @@ class PokemonViewModel extends ChangeNotifier {
       return;
     }
 
-    _pokemons = (result.data!['users'] as List)
+    _pokemons = (result.data!['pokemons'] as List)
         .map((userJson) => Pokemon(
               id: userJson['id'],
               name: userJson['name'],

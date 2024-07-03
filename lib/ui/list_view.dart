@@ -24,8 +24,8 @@ class PokemonListView extends StatelessWidget {
         itemCount: pokemonsViewModel.pokemons.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(pokemonsViewModel.pokemons[index].name),
-            subtitle: Text('No. ${pokemonsViewModel.pokemons[index].id}'),
+            title: Text('No. ${pokemonsViewModel.pokemons[index].number}'),
+            subtitle: Text(pokemonsViewModel.pokemons[index].name),
           );
         },
       ),
