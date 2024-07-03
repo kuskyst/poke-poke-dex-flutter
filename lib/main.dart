@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:provider/provider.dart';
 
-import 'list_view.dart';
+import 'ui/list_view.dart';
+import 'viewmodel/pokemon_viewmodel.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await initHiveForFlutter();
-  runApp(const AppRoot());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => PokemonViewModel(),
+      child: const AppRoot(),
+    )
+  );
 }
 
 class AppRoot extends StatelessWidget {
