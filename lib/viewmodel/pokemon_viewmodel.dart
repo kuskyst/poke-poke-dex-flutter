@@ -49,6 +49,7 @@ class PokemonViewModel extends ChangeNotifier {
               id: pokemon['id'],
               name: pokemon['name'],
               number: pokemon['number'],
+              image: pokemon['image']
             ))
         .toList();
 

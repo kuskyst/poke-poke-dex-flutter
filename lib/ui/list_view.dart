@@ -12,7 +12,7 @@ class PokemonListView extends StatelessWidget {
 
     final pokemonsViewModel = Provider.of<PokemonViewModel>(context);
 
-    pokemonsViewModel.fetchPokemons(20);
+    pokemonsViewModel.fetchPokemons(151);
 
     return Scaffold(
       appBar: AppBar(
@@ -24,8 +24,15 @@ class PokemonListView extends StatelessWidget {
         itemCount: pokemonsViewModel.pokemons.length,
         itemBuilder: (context, index) {
           return ListTile(
+            leading: Image.network(
+              pokemonsViewModel.pokemons[index].image,
+              width: 40,
+              height: 40,
+            ),
             title: Text('No. ${pokemonsViewModel.pokemons[index].number}'),
             subtitle: Text(pokemonsViewModel.pokemons[index].name),
+            trailing: const Text('＞'),
+            onTap: () {},
           );
         },
       ),
