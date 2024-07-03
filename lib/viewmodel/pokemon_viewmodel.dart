@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:poke_poke_dex_flutter/api/entity/pokemon.dart';
+import '../api/entity/pokemon.dart';
 
 class PokemonViewModel extends ChangeNotifier {
 
