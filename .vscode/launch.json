@@ -2,12 +2,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "poke-poke-dex-flutter (release mode)",
+            "name": "poke-poke-dex-flutter",
             "request": "launch",
             "type": "dart",
         },
         {
-            "name": "widgetbook (release mode)",
+            "name": "widgetbook",
             "cwd": "widgetbook",
             "request": "launch",
             "type": "dart",
