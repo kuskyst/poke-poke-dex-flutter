@@ -44,7 +44,7 @@ class PokemonViewModel extends ChangeNotifier {
     } else {
        _pokemons = (result.data!['pokemons'] as List)
         .map((pokemon) => Pokemon(
-           id: pokemon['id'],
+          id: pokemon['id'],
           name: pokemon['name'],
           number: pokemon['number'],
           image: pokemon['image']
