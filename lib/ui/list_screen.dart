@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
-import '../viewmodel/pokemon_viewmodel.dart';
+class PokemonListScreen extends HookConsumerWidget {
 
-class PokemonListView extends StatelessWidget {
-
-  const PokemonListView({super.key});
+  const PokemonListScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
 
-    final pokemonsViewModel = Provider.of<PokemonViewModel>(context);
-
+    final pokemonsViewModel = ref.watch(pokemonViewModel);
     pokemonsViewModel.fetchPokemons(151);
 
     return Scaffold(

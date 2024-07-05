@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'ui/list_view.dart';
-import 'viewmodel/pokemon_viewmodel.dart';
+import 'ui/list_screen.dart';
 
-void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => PokemonViewModel(),
-      child: const AppRoot(),
-    )
-  );
-}
+main() => runApp(const ProviderScope(child: AppRoot()));
 
 class AppRoot extends StatelessWidget {
 
@@ -24,7 +16,7 @@ class AppRoot extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),
-      home: const PokemonListView(),
+      home: const PokemonListScreen(),
     );
   }
 }

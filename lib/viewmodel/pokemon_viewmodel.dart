@@ -2,7 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import '../api/entity/pokemon.dart';
+import '../api/graphql/pokemon.graphql.dart';
+
+final pokemonViewModel = ChangeNotifierProvider((_) => PokemonViewModel());
 
 class PokemonViewModel extends ChangeNotifier {
 
@@ -23,31 +28,23 @@ class PokemonViewModel extends ChangeNotifier {
   }
 
 
-  Future<void> fetchPokemons(int first) async {
-    final QueryOptions options = QueryOptions(
-      document: gql('''
-        query {
-          pokemons(first: $first) {
-            id
-            name
-            number
-            image
-          }
-        }
-      '''),
-    );
+  fetchPokemons(int first) async {
 
-    final QueryResult result = await client.query(options);
+    final result = useQuery$Pokemons(
+      Options$Query$Pokemons(
+        variables: Variables$Query$Pokemons(first: 151),
+      ),
+    ).result;
 
     if (result.hasException) {
       log('GraphQL Exception: ${result.exception.toString()}');
     } else {
-       _pokemons = (result.data!['pokemons'] as List)
+       _pokemons = (result.parsedData?.pokemons ?? [])
         .map((pokemon) => Pokemon(
-          id: pokemon['id'],
-          name: pokemon['name'],
-          number: pokemon['number'],
-          image: pokemon['image']
+          id: pokemon?.id ?? '',
+          name: pokemon?.name ?? '',
+          number: pokemon?.number ?? '',
+          image: pokemon?.image ?? ''
         )).toList();
 
     notifyListeners();
