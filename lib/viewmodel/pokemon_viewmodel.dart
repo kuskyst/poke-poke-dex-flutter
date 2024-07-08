@@ -32,7 +32,7 @@ class PokemonViewModel extends ChangeNotifier {
           image: pokemon?.image ?? ''
         )).toList();
 
-    notifyListeners();
+    // notifyListeners();
     }
   }
 }
