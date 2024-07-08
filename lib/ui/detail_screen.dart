@@ -27,8 +27,17 @@ class PokemonDetailScreen extends HookConsumerWidget {
       ? const Center(child: CircularProgressIndicator())
       : Center(child:
         Column(children: [
-          Image.network(vm.pokemon.image, width: 80, height: 80),
-          Text(id)
+          Image.network(vm.pokemon.image, width: 120, height: 120),
+          Table(children: [
+            TableRow(children: [
+              const Text('No.'),
+              Text(vm.pokemon.number)
+            ]),
+            TableRow(children: [
+              const Text('name.'),
+              Text(vm.pokemon.name)
+            ]),
+          ])
         ])
       )
     );
