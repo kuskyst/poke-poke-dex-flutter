@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'ui/list_screen.dart';
+import 'package:poke_poke_dex/router/router.dart';
 
 void main() => runApp(const ProviderScope(child: AppRoot()));
 
@@ -12,20 +11,15 @@ class AppRoot extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final client = ValueNotifier<GraphQLClient>(
-      GraphQLClient(
-        link: HttpLink('https://graphql-pokemon2.vercel.app'),
-        cache: GraphQLCache(),
-    ));
-    
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: goRouter.routerDelegate,
+      routeInformationParser: goRouter.routeInformationParser,
+      routeInformationProvider: goRouter.routeInformationProvider,
+
       title: 'Pokemons',
       theme: ThemeData(
         primarySwatch: Colors.pink
-      ),
-      home: GraphQLProvider(
-        client: client,
-        child: const PokemonListScreen()),
+      )
     );
   }
 }

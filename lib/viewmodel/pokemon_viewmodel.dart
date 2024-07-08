@@ -51,13 +51,12 @@ Future<void> fetchPokemon(String id) async {
     if (result.hasException) {
       log('GraphQL Exception: ${result.exception.toString()}');
     } else {
-      log('GraphQL: ${result.parsedData!.pokemon.toString()}');
       _pokemon = Pokemon(
         id: result.parsedData?.pokemon?.id ?? '',
         name: result.parsedData?.pokemon?.name ?? '',
         number: result.parsedData?.pokemon?.number ?? '',
         image: result.parsedData?.pokemon?.image ?? '');
-      notifyListeners();
+      // notifyListeners();
     }
   }
 }

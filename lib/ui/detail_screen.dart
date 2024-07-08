@@ -17,7 +17,7 @@ class PokemonDetailScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     final vm = ref.watch(pokemonViewModel);
-    //vm.fetchPokemon(id);
+    vm.fetchPokemon(id);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +27,7 @@ class PokemonDetailScreen extends HookConsumerWidget {
       ? const Center(child: CircularProgressIndicator())
       : Center(child:
         Column(children: [
-          Image.network(vm.pokemon.image),
+          Image.network(vm.pokemon.image, width: 80, height: 80),
           Text(id)
         ])
       )

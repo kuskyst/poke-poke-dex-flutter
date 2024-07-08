@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:poke_poke_dex/ui/detail_screen.dart';
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
 class PokemonListScreen extends HookConsumerWidget {
@@ -33,8 +33,8 @@ class PokemonListScreen extends HookConsumerWidget {
             subtitle: Text(vm.pokemons[index].name),
             trailing: const Text('＞'),
             onTap: () { 
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => PokemonDetailScreen(id: vm.pokemons[index].id))); },
+              context.push('/detail', extra: vm.pokemons[index].id);
+            }
           );
         },
       ),
