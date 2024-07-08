@@ -14,7 +14,7 @@ class PokemonViewModel extends ChangeNotifier {
   List<Pokemon> _pokemons = [];
   List<Pokemon> get pokemons => _pokemons;
 
-  late Pokemon _pokemon;
+  Pokemon _pokemon = Pokemon(id: '', name:'', number: '', image: '');
   Pokemon get pokemon => _pokemon;
 
   Future<void> fetchPokemons(int first) async {
@@ -52,7 +52,12 @@ Future<void> fetchPokemon(String id) async {
       log('GraphQL Exception: ${result.exception.toString()}');
     } else {
       log('GraphQL: ${result.parsedData!.pokemon.toString()}');
-      // notifyListeners();
+      _pokemon = Pokemon(
+        id: result.parsedData?.pokemon?.id ?? '',
+        name: result.parsedData?.pokemon?.name ?? '',
+        number: result.parsedData?.pokemon?.number ?? '',
+        image: result.parsedData?.pokemon?.image ?? '');
+      notifyListeners();
     }
   }
 }

@@ -23,9 +23,11 @@ class PokemonDetailScreen extends HookConsumerWidget {
       appBar: AppBar(
         title: const Text('Pokemon Detail'),
       ),
-      body: Center(child:
+      body: vm.pokemon.id.isEmpty
+      ? const Center(child: CircularProgressIndicator())
+      : Center(child:
         Column(children: [
-          Text(id), 
+          Image.network(vm.pokemon.image),
           Text(id)
         ])
       )
