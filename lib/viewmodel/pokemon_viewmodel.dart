@@ -55,7 +55,10 @@ Future<void> fetchPokemon(String id) async {
         id: result.parsedData?.pokemon?.id ?? '',
         name: result.parsedData?.pokemon?.name ?? '',
         number: result.parsedData?.pokemon?.number ?? '',
-        image: result.parsedData?.pokemon?.image ?? '');
+        image: result.parsedData?.pokemon?.image ?? '',
+        classification: result.parsedData?.pokemon?.classification ?? '',
+        types: result.parsedData?.pokemon?.types ?? []);
+
       // notifyListeners();
     }
   }

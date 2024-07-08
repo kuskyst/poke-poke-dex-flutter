@@ -4,5 +4,7 @@ query Pokemon($id: String!) {
     number
     name
     image
+    classification
+    types
   }
 }

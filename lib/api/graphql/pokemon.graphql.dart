@@ -293,6 +293,20 @@ const documentNodeQueryPokemon = DocumentNode(definitions: [
             selectionSet: null,
           ),
           FieldNode(
+            name: NameNode(value: 'classification'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: 'types'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
             name: NameNode(value: '__typename'),
             alias: null,
             arguments: [],
@@ -466,6 +480,8 @@ class Query$Pokemon$pokemon {
     this.number,
     this.name,
     this.image,
+    this.classification,
+    this.types,
     this.$__typename = 'Pokemon',
   });
 
@@ -474,12 +490,16 @@ class Query$Pokemon$pokemon {
     final l$number = json['number'];
     final l$name = json['name'];
     final l$image = json['image'];
+    final l$classification = json['classification'];
+    final l$types = json['types'];
     final l$$__typename = json['__typename'];
     return Query$Pokemon$pokemon(
       id: (l$id as String),
       number: (l$number as String?),
       name: (l$name as String?),
       image: (l$image as String?),
+      classification: (l$classification as String?),
+      types: (l$types as List<dynamic>?)?.map((e) => (e as String?)).toList(),
       $__typename: (l$$__typename as String),
     );
   }
@@ -491,6 +511,10 @@ class Query$Pokemon$pokemon {
   final String? name;
 
   final String? image;
+
+  final String? classification;
+
+  final List<String?>? types;
 
   final String $__typename;
 
@@ -504,6 +528,10 @@ class Query$Pokemon$pokemon {
     _resultData['name'] = l$name;
     final l$image = image;
     _resultData['image'] = l$image;
+    final l$classification = classification;
+    _resultData['classification'] = l$classification;
+    final l$types = types;
+    _resultData['types'] = l$types?.map((e) => e).toList();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -515,12 +543,16 @@ class Query$Pokemon$pokemon {
     final l$number = number;
     final l$name = name;
     final l$image = image;
+    final l$classification = classification;
+    final l$types = types;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$id,
       l$number,
       l$name,
       l$image,
+      l$classification,
+      l$types == null ? null : Object.hashAll(l$types.map((v) => v)),
       l$$__typename,
     ]);
   }
@@ -551,6 +583,27 @@ class Query$Pokemon$pokemon {
     final l$image = image;
     final lOther$image = other.image;
     if (l$image != lOther$image) {
+      return false;
+    }
+    final l$classification = classification;
+    final lOther$classification = other.classification;
+    if (l$classification != lOther$classification) {
+      return false;
+    }
+    final l$types = types;
+    final lOther$types = other.types;
+    if (l$types != null && lOther$types != null) {
+      if (l$types.length != lOther$types.length) {
+        return false;
+      }
+      for (int i = 0; i < l$types.length; i++) {
+        final l$types$entry = l$types[i];
+        final lOther$types$entry = lOther$types[i];
+        if (l$types$entry != lOther$types$entry) {
+          return false;
+        }
+      }
+    } else if (l$types != lOther$types) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -584,6 +637,8 @@ abstract class CopyWith$Query$Pokemon$pokemon<TRes> {
     String? number,
     String? name,
     String? image,
+    String? classification,
+    List<String?>? types,
     String? $__typename,
   });
 }
@@ -606,6 +661,8 @@ class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
     Object? number = _undefined,
     Object? name = _undefined,
     Object? image = _undefined,
+    Object? classification = _undefined,
+    Object? types = _undefined,
     Object? $__typename = _undefined,
   }) =>
       _then(Query$Pokemon$pokemon(
@@ -613,6 +670,11 @@ class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
         number: number == _undefined ? _instance.number : (number as String?),
         name: name == _undefined ? _instance.name : (name as String?),
         image: image == _undefined ? _instance.image : (image as String?),
+        classification: classification == _undefined
+            ? _instance.classification
+            : (classification as String?),
+        types:
+            types == _undefined ? _instance.types : (types as List<String?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
@@ -630,6 +692,8 @@ class _CopyWithStubImpl$Query$Pokemon$pokemon<TRes>
     String? number,
     String? name,
     String? image,
+    String? classification,
+    List<String?>? types,
     String? $__typename,
   }) =>
       _res;

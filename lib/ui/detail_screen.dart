@@ -37,6 +37,14 @@ class PokemonDetailScreen extends HookConsumerWidget {
               const Text('name.'),
               Text(vm.pokemon.name)
             ]),
+            TableRow(children: [
+              const Text('classification.'),
+              Text(vm.pokemon.classification ?? '')
+            ]),
+            TableRow(children: [
+              const Text('types.'),
+              Text(vm.pokemon.types.toString())
+            ]),
           ])
         ])
       )
