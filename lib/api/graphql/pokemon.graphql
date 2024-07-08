@@ -1,5 +1,5 @@
-query Pokemons($first: Int!) {
-  pokemons(first: $first) {
+query Pokemon($id: String!) {
+  pokemon(id: $id) {
     id
     number
     name

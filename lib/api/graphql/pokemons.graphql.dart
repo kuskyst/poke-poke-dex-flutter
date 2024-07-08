@@ -4,34 +4,34 @@ import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 
-class Variables$Query$Pokemon {
-  factory Variables$Query$Pokemon({required String id}) =>
-      Variables$Query$Pokemon._({
-        r'id': id,
+class Variables$Query$Pokemons {
+  factory Variables$Query$Pokemons({required int first}) =>
+      Variables$Query$Pokemons._({
+        r'first': first,
       });
 
-  Variables$Query$Pokemon._(this._$data);
+  Variables$Query$Pokemons._(this._$data);
 
-  factory Variables$Query$Pokemon.fromJson(Map<String, dynamic> data) {
+  factory Variables$Query$Pokemons.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
-    final l$id = data['id'];
-    result$data['id'] = (l$id as String);
-    return Variables$Query$Pokemon._(result$data);
+    final l$first = data['first'];
+    result$data['first'] = (l$first as int);
+    return Variables$Query$Pokemons._(result$data);
   }
 
   Map<String, dynamic> _$data;
 
-  String get id => (_$data['id'] as String);
+  int get first => (_$data['first'] as int);
 
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
-    final l$id = id;
-    result$data['id'] = l$id;
+    final l$first = first;
+    result$data['first'] = l$first;
     return result$data;
   }
 
-  CopyWith$Variables$Query$Pokemon<Variables$Query$Pokemon> get copyWith =>
-      CopyWith$Variables$Query$Pokemon(
+  CopyWith$Variables$Query$Pokemons<Variables$Query$Pokemons> get copyWith =>
+      CopyWith$Variables$Query$Pokemons(
         this,
         (i) => i,
       );
@@ -41,13 +41,13 @@ class Variables$Query$Pokemon {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$Pokemon) ||
+    if (!(other is Variables$Query$Pokemons) ||
         runtimeType != other.runtimeType) {
       return false;
     }
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) {
+    final l$first = first;
+    final lOther$first = other.first;
+    if (l$first != lOther$first) {
       return false;
     }
     return true;
@@ -55,76 +55,78 @@ class Variables$Query$Pokemon {
 
   @override
   int get hashCode {
-    final l$id = id;
-    return Object.hashAll([l$id]);
+    final l$first = first;
+    return Object.hashAll([l$first]);
   }
 }
 
-abstract class CopyWith$Variables$Query$Pokemon<TRes> {
-  factory CopyWith$Variables$Query$Pokemon(
-    Variables$Query$Pokemon instance,
-    TRes Function(Variables$Query$Pokemon) then,
-  ) = _CopyWithImpl$Variables$Query$Pokemon;
+abstract class CopyWith$Variables$Query$Pokemons<TRes> {
+  factory CopyWith$Variables$Query$Pokemons(
+    Variables$Query$Pokemons instance,
+    TRes Function(Variables$Query$Pokemons) then,
+  ) = _CopyWithImpl$Variables$Query$Pokemons;
 
-  factory CopyWith$Variables$Query$Pokemon.stub(TRes res) =
-      _CopyWithStubImpl$Variables$Query$Pokemon;
+  factory CopyWith$Variables$Query$Pokemons.stub(TRes res) =
+      _CopyWithStubImpl$Variables$Query$Pokemons;
 
-  TRes call({String? id});
+  TRes call({int? first});
 }
 
-class _CopyWithImpl$Variables$Query$Pokemon<TRes>
-    implements CopyWith$Variables$Query$Pokemon<TRes> {
-  _CopyWithImpl$Variables$Query$Pokemon(
+class _CopyWithImpl$Variables$Query$Pokemons<TRes>
+    implements CopyWith$Variables$Query$Pokemons<TRes> {
+  _CopyWithImpl$Variables$Query$Pokemons(
     this._instance,
     this._then,
   );
 
-  final Variables$Query$Pokemon _instance;
+  final Variables$Query$Pokemons _instance;
 
-  final TRes Function(Variables$Query$Pokemon) _then;
+  final TRes Function(Variables$Query$Pokemons) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? id = _undefined}) => _then(Variables$Query$Pokemon._({
+  TRes call({Object? first = _undefined}) => _then(Variables$Query$Pokemons._({
         ..._instance._$data,
-        if (id != _undefined && id != null) 'id': (id as String),
+        if (first != _undefined && first != null) 'first': (first as int),
       }));
 }
 
-class _CopyWithStubImpl$Variables$Query$Pokemon<TRes>
-    implements CopyWith$Variables$Query$Pokemon<TRes> {
-  _CopyWithStubImpl$Variables$Query$Pokemon(this._res);
+class _CopyWithStubImpl$Variables$Query$Pokemons<TRes>
+    implements CopyWith$Variables$Query$Pokemons<TRes> {
+  _CopyWithStubImpl$Variables$Query$Pokemons(this._res);
 
   TRes _res;
 
-  call({String? id}) => _res;
+  call({int? first}) => _res;
 }
 
-class Query$Pokemon {
-  Query$Pokemon({
-    this.pokemon,
+class Query$Pokemons {
+  Query$Pokemons({
+    this.pokemons,
     this.$__typename = 'Query',
   });
 
-  factory Query$Pokemon.fromJson(Map<String, dynamic> json) {
-    final l$pokemon = json['pokemon'];
+  factory Query$Pokemons.fromJson(Map<String, dynamic> json) {
+    final l$pokemons = json['pokemons'];
     final l$$__typename = json['__typename'];
-    return Query$Pokemon(
-      pokemon: l$pokemon == null
-          ? null
-          : Query$Pokemon$pokemon.fromJson((l$pokemon as Map<String, dynamic>)),
+    return Query$Pokemons(
+      pokemons: (l$pokemons as List<dynamic>?)
+          ?.map((e) => e == null
+              ? null
+              : Query$Pokemons$pokemons.fromJson((e as Map<String, dynamic>)))
+          .toList(),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$Pokemon$pokemon? pokemon;
+  final List<Query$Pokemons$pokemons?>? pokemons;
 
   final String $__typename;
 
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
-    final l$pokemon = pokemon;
-    _resultData['pokemon'] = l$pokemon?.toJson();
+    final l$pokemons = pokemons;
+    _resultData['pokemons'] = l$pokemons?.map((e) => e?.toJson()).toList();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -132,10 +134,10 @@ class Query$Pokemon {
 
   @override
   int get hashCode {
-    final l$pokemon = pokemon;
+    final l$pokemons = pokemons;
     final l$$__typename = $__typename;
     return Object.hashAll([
-      l$pokemon,
+      l$pokemons == null ? null : Object.hashAll(l$pokemons.map((v) => v)),
       l$$__typename,
     ]);
   }
@@ -145,12 +147,23 @@ class Query$Pokemon {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Pokemon) || runtimeType != other.runtimeType) {
+    if (!(other is Query$Pokemons) || runtimeType != other.runtimeType) {
       return false;
     }
-    final l$pokemon = pokemon;
-    final lOther$pokemon = other.pokemon;
-    if (l$pokemon != lOther$pokemon) {
+    final l$pokemons = pokemons;
+    final lOther$pokemons = other.pokemons;
+    if (l$pokemons != null && lOther$pokemons != null) {
+      if (l$pokemons.length != lOther$pokemons.length) {
+        return false;
+      }
+      for (int i = 0; i < l$pokemons.length; i++) {
+        final l$pokemons$entry = l$pokemons[i];
+        final lOther$pokemons$entry = lOther$pokemons[i];
+        if (l$pokemons$entry != lOther$pokemons$entry) {
+          return false;
+        }
+      }
+    } else if (l$pokemons != lOther$pokemons) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -162,89 +175,99 @@ class Query$Pokemon {
   }
 }
 
-extension UtilityExtension$Query$Pokemon on Query$Pokemon {
-  CopyWith$Query$Pokemon<Query$Pokemon> get copyWith => CopyWith$Query$Pokemon(
+extension UtilityExtension$Query$Pokemons on Query$Pokemons {
+  CopyWith$Query$Pokemons<Query$Pokemons> get copyWith =>
+      CopyWith$Query$Pokemons(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$Pokemon<TRes> {
-  factory CopyWith$Query$Pokemon(
-    Query$Pokemon instance,
-    TRes Function(Query$Pokemon) then,
-  ) = _CopyWithImpl$Query$Pokemon;
+abstract class CopyWith$Query$Pokemons<TRes> {
+  factory CopyWith$Query$Pokemons(
+    Query$Pokemons instance,
+    TRes Function(Query$Pokemons) then,
+  ) = _CopyWithImpl$Query$Pokemons;
 
-  factory CopyWith$Query$Pokemon.stub(TRes res) =
-      _CopyWithStubImpl$Query$Pokemon;
+  factory CopyWith$Query$Pokemons.stub(TRes res) =
+      _CopyWithStubImpl$Query$Pokemons;
 
   TRes call({
-    Query$Pokemon$pokemon? pokemon,
+    List<Query$Pokemons$pokemons?>? pokemons,
     String? $__typename,
   });
-  CopyWith$Query$Pokemon$pokemon<TRes> get pokemon;
+  TRes pokemons(
+      Iterable<Query$Pokemons$pokemons?>? Function(
+              Iterable<
+                  CopyWith$Query$Pokemons$pokemons<Query$Pokemons$pokemons>?>?)
+          _fn);
 }
 
-class _CopyWithImpl$Query$Pokemon<TRes>
-    implements CopyWith$Query$Pokemon<TRes> {
-  _CopyWithImpl$Query$Pokemon(
+class _CopyWithImpl$Query$Pokemons<TRes>
+    implements CopyWith$Query$Pokemons<TRes> {
+  _CopyWithImpl$Query$Pokemons(
     this._instance,
     this._then,
   );
 
-  final Query$Pokemon _instance;
+  final Query$Pokemons _instance;
 
-  final TRes Function(Query$Pokemon) _then;
+  final TRes Function(Query$Pokemons) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
-    Object? pokemon = _undefined,
+    Object? pokemons = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Pokemon(
-        pokemon: pokemon == _undefined
-            ? _instance.pokemon
-            : (pokemon as Query$Pokemon$pokemon?),
+      _then(Query$Pokemons(
+        pokemons: pokemons == _undefined
+            ? _instance.pokemons
+            : (pokemons as List<Query$Pokemons$pokemons?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Pokemon$pokemon<TRes> get pokemon {
-    final local$pokemon = _instance.pokemon;
-    return local$pokemon == null
-        ? CopyWith$Query$Pokemon$pokemon.stub(_then(_instance))
-        : CopyWith$Query$Pokemon$pokemon(
-            local$pokemon, (e) => call(pokemon: e));
-  }
+  TRes pokemons(
+          Iterable<Query$Pokemons$pokemons?>? Function(
+                  Iterable<
+                      CopyWith$Query$Pokemons$pokemons<
+                          Query$Pokemons$pokemons>?>?)
+              _fn) =>
+      call(
+          pokemons: _fn(_instance.pokemons?.map((e) => e == null
+              ? null
+              : CopyWith$Query$Pokemons$pokemons(
+                  e,
+                  (i) => i,
+                )))?.toList());
 }
 
-class _CopyWithStubImpl$Query$Pokemon<TRes>
-    implements CopyWith$Query$Pokemon<TRes> {
-  _CopyWithStubImpl$Query$Pokemon(this._res);
+class _CopyWithStubImpl$Query$Pokemons<TRes>
+    implements CopyWith$Query$Pokemons<TRes> {
+  _CopyWithStubImpl$Query$Pokemons(this._res);
 
   TRes _res;
 
   call({
-    Query$Pokemon$pokemon? pokemon,
+    List<Query$Pokemons$pokemons?>? pokemons,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Pokemon$pokemon<TRes> get pokemon =>
-      CopyWith$Query$Pokemon$pokemon.stub(_res);
+  pokemons(_fn) => _res;
 }
 
-const documentNodeQueryPokemon = DocumentNode(definitions: [
+const documentNodeQueryPokemons = DocumentNode(definitions: [
   OperationDefinitionNode(
     type: OperationType.query,
-    name: NameNode(value: 'Pokemon'),
+    name: NameNode(value: 'Pokemons'),
     variableDefinitions: [
       VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'id')),
+        variable: VariableNode(name: NameNode(value: 'first')),
         type: NamedTypeNode(
-          name: NameNode(value: 'String'),
+          name: NameNode(value: 'Int'),
           isNonNull: true,
         ),
         defaultValue: DefaultValueNode(value: null),
@@ -254,12 +277,12 @@ const documentNodeQueryPokemon = DocumentNode(definitions: [
     directives: [],
     selectionSet: SelectionSetNode(selections: [
       FieldNode(
-        name: NameNode(value: 'pokemon'),
+        name: NameNode(value: 'pokemons'),
         alias: null,
         arguments: [
           ArgumentNode(
-            name: NameNode(value: 'id'),
-            value: VariableNode(name: NameNode(value: 'id')),
+            name: NameNode(value: 'first'),
+            value: VariableNode(name: NameNode(value: 'first')),
           )
         ],
         directives: [],
@@ -311,25 +334,25 @@ const documentNodeQueryPokemon = DocumentNode(definitions: [
     ]),
   ),
 ]);
-Query$Pokemon _parserFn$Query$Pokemon(Map<String, dynamic> data) =>
-    Query$Pokemon.fromJson(data);
-typedef OnQueryComplete$Query$Pokemon = FutureOr<void> Function(
+Query$Pokemons _parserFn$Query$Pokemons(Map<String, dynamic> data) =>
+    Query$Pokemons.fromJson(data);
+typedef OnQueryComplete$Query$Pokemons = FutureOr<void> Function(
   Map<String, dynamic>?,
-  Query$Pokemon?,
+  Query$Pokemons?,
 );
 
-class Options$Query$Pokemon extends graphql.QueryOptions<Query$Pokemon> {
-  Options$Query$Pokemon({
+class Options$Query$Pokemons extends graphql.QueryOptions<Query$Pokemons> {
+  Options$Query$Pokemons({
     String? operationName,
-    required Variables$Query$Pokemon variables,
+    required Variables$Query$Pokemons variables,
     graphql.FetchPolicy? fetchPolicy,
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
-    Query$Pokemon? typedOptimisticResult,
+    Query$Pokemons? typedOptimisticResult,
     Duration? pollInterval,
     graphql.Context? context,
-    OnQueryComplete$Query$Pokemon? onComplete,
+    OnQueryComplete$Query$Pokemons? onComplete,
     graphql.OnQueryError? onError,
   })  : onCompleteWithParsed = onComplete,
         super(
@@ -345,14 +368,14 @@ class Options$Query$Pokemon extends graphql.QueryOptions<Query$Pokemon> {
               ? null
               : (data) => onComplete(
                     data,
-                    data == null ? null : _parserFn$Query$Pokemon(data),
+                    data == null ? null : _parserFn$Query$Pokemons(data),
                   ),
           onError: onError,
-          document: documentNodeQueryPokemon,
-          parserFn: _parserFn$Query$Pokemon,
+          document: documentNodeQueryPokemons,
+          parserFn: _parserFn$Query$Pokemons,
         );
 
-  final OnQueryComplete$Query$Pokemon? onCompleteWithParsed;
+  final OnQueryComplete$Query$Pokemons? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
@@ -363,16 +386,16 @@ class Options$Query$Pokemon extends graphql.QueryOptions<Query$Pokemon> {
       ];
 }
 
-class WatchOptions$Query$Pokemon
-    extends graphql.WatchQueryOptions<Query$Pokemon> {
-  WatchOptions$Query$Pokemon({
+class WatchOptions$Query$Pokemons
+    extends graphql.WatchQueryOptions<Query$Pokemons> {
+  WatchOptions$Query$Pokemons({
     String? operationName,
-    required Variables$Query$Pokemon variables,
+    required Variables$Query$Pokemons variables,
     graphql.FetchPolicy? fetchPolicy,
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
-    Query$Pokemon? typedOptimisticResult,
+    Query$Pokemons? typedOptimisticResult,
     graphql.Context? context,
     Duration? pollInterval,
     bool? eagerlyFetchResults,
@@ -386,73 +409,73 @@ class WatchOptions$Query$Pokemon
           cacheRereadPolicy: cacheRereadPolicy,
           optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           context: context,
-          document: documentNodeQueryPokemon,
+          document: documentNodeQueryPokemons,
           pollInterval: pollInterval,
           eagerlyFetchResults: eagerlyFetchResults,
           carryForwardDataOnException: carryForwardDataOnException,
           fetchResults: fetchResults,
-          parserFn: _parserFn$Query$Pokemon,
+          parserFn: _parserFn$Query$Pokemons,
         );
 }
 
-class FetchMoreOptions$Query$Pokemon extends graphql.FetchMoreOptions {
-  FetchMoreOptions$Query$Pokemon({
+class FetchMoreOptions$Query$Pokemons extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$Pokemons({
     required graphql.UpdateQuery updateQuery,
-    required Variables$Query$Pokemon variables,
+    required Variables$Query$Pokemons variables,
   }) : super(
           updateQuery: updateQuery,
           variables: variables.toJson(),
-          document: documentNodeQueryPokemon,
+          document: documentNodeQueryPokemons,
         );
 }
 
-extension ClientExtension$Query$Pokemon on graphql.GraphQLClient {
-  Future<graphql.QueryResult<Query$Pokemon>> query$Pokemon(
-          Options$Query$Pokemon options) async =>
+extension ClientExtension$Query$Pokemons on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$Pokemons>> query$Pokemons(
+          Options$Query$Pokemons options) async =>
       await this.query(options);
-  graphql.ObservableQuery<Query$Pokemon> watchQuery$Pokemon(
-          WatchOptions$Query$Pokemon options) =>
+  graphql.ObservableQuery<Query$Pokemons> watchQuery$Pokemons(
+          WatchOptions$Query$Pokemons options) =>
       this.watchQuery(options);
-  void writeQuery$Pokemon({
-    required Query$Pokemon data,
-    required Variables$Query$Pokemon variables,
+  void writeQuery$Pokemons({
+    required Query$Pokemons data,
+    required Variables$Query$Pokemons variables,
     bool broadcast = true,
   }) =>
       this.writeQuery(
         graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryPokemon),
+          operation: graphql.Operation(document: documentNodeQueryPokemons),
           variables: variables.toJson(),
         ),
         data: data.toJson(),
         broadcast: broadcast,
       );
-  Query$Pokemon? readQuery$Pokemon({
-    required Variables$Query$Pokemon variables,
+  Query$Pokemons? readQuery$Pokemons({
+    required Variables$Query$Pokemons variables,
     bool optimistic = true,
   }) {
     final result = this.readQuery(
       graphql.Request(
-        operation: graphql.Operation(document: documentNodeQueryPokemon),
+        operation: graphql.Operation(document: documentNodeQueryPokemons),
         variables: variables.toJson(),
       ),
       optimistic: optimistic,
     );
-    return result == null ? null : Query$Pokemon.fromJson(result);
+    return result == null ? null : Query$Pokemons.fromJson(result);
   }
 }
 
-graphql_flutter.QueryHookResult<Query$Pokemon> useQuery$Pokemon(
-        Options$Query$Pokemon options) =>
+graphql_flutter.QueryHookResult<Query$Pokemons> useQuery$Pokemons(
+        Options$Query$Pokemons options) =>
     graphql_flutter.useQuery(options);
-graphql.ObservableQuery<Query$Pokemon> useWatchQuery$Pokemon(
-        WatchOptions$Query$Pokemon options) =>
+graphql.ObservableQuery<Query$Pokemons> useWatchQuery$Pokemons(
+        WatchOptions$Query$Pokemons options) =>
     graphql_flutter.useWatchQuery(options);
 
-class Query$Pokemon$Widget extends graphql_flutter.Query<Query$Pokemon> {
-  Query$Pokemon$Widget({
+class Query$Pokemons$Widget extends graphql_flutter.Query<Query$Pokemons> {
+  Query$Pokemons$Widget({
     widgets.Key? key,
-    required Options$Query$Pokemon options,
-    required graphql_flutter.QueryBuilder<Query$Pokemon> builder,
+    required Options$Query$Pokemons options,
+    required graphql_flutter.QueryBuilder<Query$Pokemons> builder,
   }) : super(
           key: key,
           options: options,
@@ -460,8 +483,8 @@ class Query$Pokemon$Widget extends graphql_flutter.Query<Query$Pokemon> {
         );
 }
 
-class Query$Pokemon$pokemon {
-  Query$Pokemon$pokemon({
+class Query$Pokemons$pokemons {
+  Query$Pokemons$pokemons({
     required this.id,
     this.number,
     this.name,
@@ -469,13 +492,13 @@ class Query$Pokemon$pokemon {
     this.$__typename = 'Pokemon',
   });
 
-  factory Query$Pokemon$pokemon.fromJson(Map<String, dynamic> json) {
+  factory Query$Pokemons$pokemons.fromJson(Map<String, dynamic> json) {
     final l$id = json['id'];
     final l$number = json['number'];
     final l$name = json['name'];
     final l$image = json['image'];
     final l$$__typename = json['__typename'];
-    return Query$Pokemon$pokemon(
+    return Query$Pokemons$pokemons(
       id: (l$id as String),
       number: (l$number as String?),
       name: (l$name as String?),
@@ -530,7 +553,8 @@ class Query$Pokemon$pokemon {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Pokemon$pokemon) || runtimeType != other.runtimeType) {
+    if (!(other is Query$Pokemons$pokemons) ||
+        runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -562,22 +586,22 @@ class Query$Pokemon$pokemon {
   }
 }
 
-extension UtilityExtension$Query$Pokemon$pokemon on Query$Pokemon$pokemon {
-  CopyWith$Query$Pokemon$pokemon<Query$Pokemon$pokemon> get copyWith =>
-      CopyWith$Query$Pokemon$pokemon(
+extension UtilityExtension$Query$Pokemons$pokemons on Query$Pokemons$pokemons {
+  CopyWith$Query$Pokemons$pokemons<Query$Pokemons$pokemons> get copyWith =>
+      CopyWith$Query$Pokemons$pokemons(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$Pokemon$pokemon<TRes> {
-  factory CopyWith$Query$Pokemon$pokemon(
-    Query$Pokemon$pokemon instance,
-    TRes Function(Query$Pokemon$pokemon) then,
-  ) = _CopyWithImpl$Query$Pokemon$pokemon;
+abstract class CopyWith$Query$Pokemons$pokemons<TRes> {
+  factory CopyWith$Query$Pokemons$pokemons(
+    Query$Pokemons$pokemons instance,
+    TRes Function(Query$Pokemons$pokemons) then,
+  ) = _CopyWithImpl$Query$Pokemons$pokemons;
 
-  factory CopyWith$Query$Pokemon$pokemon.stub(TRes res) =
-      _CopyWithStubImpl$Query$Pokemon$pokemon;
+  factory CopyWith$Query$Pokemons$pokemons.stub(TRes res) =
+      _CopyWithStubImpl$Query$Pokemons$pokemons;
 
   TRes call({
     String? id,
@@ -588,16 +612,16 @@ abstract class CopyWith$Query$Pokemon$pokemon<TRes> {
   });
 }
 
-class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
-    implements CopyWith$Query$Pokemon$pokemon<TRes> {
-  _CopyWithImpl$Query$Pokemon$pokemon(
+class _CopyWithImpl$Query$Pokemons$pokemons<TRes>
+    implements CopyWith$Query$Pokemons$pokemons<TRes> {
+  _CopyWithImpl$Query$Pokemons$pokemons(
     this._instance,
     this._then,
   );
 
-  final Query$Pokemon$pokemon _instance;
+  final Query$Pokemons$pokemons _instance;
 
-  final TRes Function(Query$Pokemon$pokemon) _then;
+  final TRes Function(Query$Pokemons$pokemons) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -608,7 +632,7 @@ class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
     Object? image = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Pokemon$pokemon(
+      _then(Query$Pokemons$pokemons(
         id: id == _undefined || id == null ? _instance.id : (id as String),
         number: number == _undefined ? _instance.number : (number as String?),
         name: name == _undefined ? _instance.name : (name as String?),
@@ -619,9 +643,9 @@ class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
       ));
 }
 
-class _CopyWithStubImpl$Query$Pokemon$pokemon<TRes>
-    implements CopyWith$Query$Pokemon$pokemon<TRes> {
-  _CopyWithStubImpl$Query$Pokemon$pokemon(this._res);
+class _CopyWithStubImpl$Query$Pokemons$pokemons<TRes>
+    implements CopyWith$Query$Pokemons$pokemons<TRes> {
+  _CopyWithStubImpl$Query$Pokemons$pokemons(this._res);
 
   TRes _res;
 

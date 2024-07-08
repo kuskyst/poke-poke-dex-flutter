@@ -13,11 +13,16 @@ import 'package:widgetbook/widgetbook.dart' as _i1;
 import 'package:widgetbook_workspace/component/text_field.dart' as _i2;
 
 final directories = <_i1.WidgetbookNode>[
-  _i1.WidgetbookLeafComponent(
-    name: 'CustomTextField',
-    useCase: _i1.WidgetbookUseCase(
-      name: 'CustomTextField',
-      builder: _i2.customTextField,
-    ),
+  _i1.WidgetbookFolder(
+    name: 'component',
+    children: [
+      _i1.WidgetbookLeafComponent(
+        name: 'CustomTextField',
+        useCase: _i1.WidgetbookUseCase(
+          name: 'CustomTextField',
+          builder: _i2.customTextField,
+        ),
+      )
+    ],
   )
 ];
