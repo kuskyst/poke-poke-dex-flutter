@@ -3,7 +3,7 @@
 
 | # | |
 | ---- | ---- |
-| Language| Dart(Flutter) |
+| Language| Dart (Flutter) |
 | Architecture | MVVM |
 | UI | widgetbook, widgetbook_annotation, widgetbook_generator |
 | Transition | go_router |
