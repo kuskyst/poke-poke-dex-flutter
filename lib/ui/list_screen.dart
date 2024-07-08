@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:poke_poke_dex/ui/detail_screen.dart';
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
 class PokemonListScreen extends HookConsumerWidget {
@@ -30,7 +31,9 @@ class PokemonListScreen extends HookConsumerWidget {
             title: Text('No. ${vm.pokemons[index].number}'),
             subtitle: Text(vm.pokemons[index].name),
             trailing: const Text('＞'),
-            onTap: () {},
+            onTap: () { 
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PokemonDetailScreen(id: vm.pokemons[index].id))); },
           );
         },
       ),
