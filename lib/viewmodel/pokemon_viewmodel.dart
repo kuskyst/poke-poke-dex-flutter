@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../api/entity/pokemon.dart';
-import '../api/graphql/pokemon.graphql.dart';
-import '../api/graphql/pokemons.graphql.dart';
+import 'package:poke_poke_dex/api/entity/pokemon.dart';
+import 'package:poke_poke_dex/api/graphql/pokemon.graphql.dart';
+import 'package:poke_poke_dex/api/graphql/pokemons.graphql.dart';
 
 final pokemonViewModel = ChangeNotifierProvider((_) => PokemonViewModel());
 
@@ -51,7 +51,7 @@ Future<void> fetchPokemon(String id) async {
     if (result.hasException) {
       log('GraphQL Exception: ${result.exception.toString()}');
     } else {
-       log('GraphQL: ${result.parsedData!.pokemon.toString()}');
+      log('GraphQL: ${result.parsedData!.pokemon.toString()}');
       // notifyListeners();
     }
   }

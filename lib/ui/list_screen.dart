@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:poke_poke_dex_flutter/ui/detail_screen.dart';
-import 'package:poke_poke_dex_flutter/viewmodel/pokemon_viewmodel.dart';
+import 'package:poke_poke_dex/ui/detail_screen.dart';
+import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
 class PokemonListScreen extends HookConsumerWidget {
 
