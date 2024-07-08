@@ -15,6 +15,7 @@ class PokemonListScreen extends HookConsumerWidget {
     vm.fetchPokemons(151);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Pokemon List'),
       ),

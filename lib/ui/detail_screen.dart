@@ -20,34 +20,37 @@ class PokemonDetailScreen extends HookConsumerWidget {
     vm.fetchPokemon(id);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Pokemon Detail'),
       ),
       body: vm.pokemon.id.isEmpty
       ? const Center(child: CircularProgressIndicator())
-      : Center(child:
-        Column(children: [
-          Image.network(vm.pokemon.image, width: 120, height: 120),
-          Table(children: [
-            TableRow(children: [
-              const Text('No.'),
-              Text(vm.pokemon.number)
-            ]),
-            TableRow(children: [
-              const Text('name.'),
-              Text(vm.pokemon.name)
-            ]),
-            TableRow(children: [
-              const Text('classification.'),
-              Text(vm.pokemon.classification ?? '')
-            ]),
-            TableRow(children: [
-              const Text('types.'),
-              Text(vm.pokemon.types.toString())
-            ]),
-          ])
-        ])
-      )
+      : Padding(padding: const EdgeInsets.all(30), child: Center(
+        child: Column(
+          children: [
+            Image.network(vm.pokemon.image, width: 120, height: 120),
+            Table(children: [
+              TableRow(children: [
+                const Text('No.'),
+                Text(vm.pokemon.number)
+              ]),
+              TableRow(children: [
+                const Text('name.'),
+                Text(vm.pokemon.name)
+              ]),
+              TableRow(children: [
+                const Text('classification.'),
+                Text(vm.pokemon.classification ?? '')
+              ]),
+              TableRow(children: [
+                const Text('types.'),
+                Text(vm.pokemon.types.toString())
+              ]),
+            ])
+          ]
+          )
+      ))
     );
   }
 
