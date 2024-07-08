@@ -9,26 +9,26 @@ class PokemonListScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final pokemonsViewModel = ref.watch(pokemonViewModel);
-    pokemonsViewModel.fetchPokemons(151);
+    final vm = ref.watch(pokemonViewModel);
+    vm.fetchPokemons(151);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pokemon List'),
       ),
-      body: pokemonsViewModel.pokemons.isEmpty
+      body: vm.pokemons.isEmpty
       ? const Center(child: CircularProgressIndicator())
       : ListView.builder(
-        itemCount: pokemonsViewModel.pokemons.length,
+        itemCount: vm.pokemons.length,
         itemBuilder: (context, index) {
           return ListTile(
             leading: Image.network(
-              pokemonsViewModel.pokemons[index].image,
+              vm.pokemons[index].image,
               width: 40,
               height: 40,
             ),
-            title: Text('No. ${pokemonsViewModel.pokemons[index].number}'),
-            subtitle: Text(pokemonsViewModel.pokemons[index].name),
+            title: Text('No. ${vm.pokemons[index].number}'),
+            subtitle: Text(vm.pokemons[index].name),
             trailing: const Text('＞'),
             onTap: () {},
           );
