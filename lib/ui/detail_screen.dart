@@ -26,30 +26,32 @@ class PokemonDetailScreen extends HookConsumerWidget {
       ),
       body: vm.pokemon.id.isEmpty
       ? const Center(child: CircularProgressIndicator())
-      : Padding(padding: const EdgeInsets.all(30), child: Center(
+      : Padding(padding: const EdgeInsets.all(20), child: Center(
         child: Column(
           children: [
             Image.network(vm.pokemon.image, width: 120, height: 120),
-            Table(children: [
-              TableRow(children: [
-                const Text('No.'),
-                Text(vm.pokemon.number)
-              ]),
-              TableRow(children: [
-                const Text('name.'),
-                Text(vm.pokemon.name)
-              ]),
-              TableRow(children: [
-                const Text('classification.'),
-                Text(vm.pokemon.classification ?? '')
-              ]),
-              TableRow(children: [
-                const Text('types.'),
-                Text(vm.pokemon.types.toString())
-              ]),
-            ])
+            Padding(padding: const EdgeInsets.all(30), child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ const Text('No.'), Text(vm.pokemon.number) ]
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ const Text('name.'), Text(vm.pokemon.name) ]
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ const Text('classification.'), Text(vm.pokemon.classification ?? '') ]
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ const Text('types.'), Text(vm.pokemon.types.toString()) ]
+                ),
+              ]
+            ))
           ]
-          )
+        )
       ))
     );
   }
