@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:poke_poke_dex/ui/widget/evolution_bottom_sheet.dart';
+import 'package:poke_poke_dex/ui/widget/evolution_widget.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 

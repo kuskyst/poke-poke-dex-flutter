@@ -5,7 +5,6 @@ import 'package:poke_poke_dex/api/client/client.dart';
 
 import 'package:poke_poke_dex/ui/screen/detail_screen.dart';
 import 'package:poke_poke_dex/ui/screen/list_screen.dart';
-import 'package:poke_poke_dex/ui/widget/evolution_bottom_sheet.dart';
 
 final goRouter = GoRouter(
 
