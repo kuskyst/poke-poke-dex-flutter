@@ -4,7 +4,6 @@ import 'package:poke_poke_dex/ui/widget/evolution_widget.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
-
 class PokemonDetailScreen extends HookConsumerWidget {
 
   final String id;
