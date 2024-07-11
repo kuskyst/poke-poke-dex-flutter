@@ -8,6 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  graphql_flutter: ^5.0.1
+  hooks_riverpod: ^2.5.1
   poke_poke_dex:
     path: ../
   widgetbook: ^3.8.0
