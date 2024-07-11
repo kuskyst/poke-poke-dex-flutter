@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:poke_poke_dex/ui/widget/evolution_widget.dart';
+import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
+import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
@@ -25,7 +26,7 @@ class PokemonDetailScreen extends HookConsumerWidget {
         title: const Text('Pokemon Detail'),
       ),
       body: vm.pokemon.id.isEmpty
-      ? const Center(child: CircularProgressIndicator())
+      ? const ProgressBar()
       : Padding(padding: const EdgeInsets.all(20), child: Center(
         child: Column(
           children: [
@@ -63,7 +64,7 @@ class PokemonDetailScreen extends HookConsumerWidget {
                             useSafeArea: true,
                             backgroundColor: Colors.white,
                             builder: (BuildContext context) {
-                              return EvolutionWidget(image: vm.pokemon.evolutions!.first!.image);
+                              return EvolutionModal(image: vm.pokemon.evolutions!.first!.image);
                             }
                           );
                         }

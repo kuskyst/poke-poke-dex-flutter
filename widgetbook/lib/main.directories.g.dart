@@ -10,10 +10,22 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:widgetbook/widgetbook.dart' as _i1;
-import 'package:widgetbook_workspace/component/screen.dart' as _i2;
-import 'package:widgetbook_workspace/component/widget.dart' as _i3;
+import 'package:widgetbook_workspace/component/screen.dart' as _i3;
+import 'package:widgetbook_workspace/component/widget.dart' as _i2;
 
 final directories = <_i1.WidgetbookNode>[
+  _i1.WidgetbookFolder(
+    name: 'material',
+    children: [
+      _i1.WidgetbookLeafComponent(
+        name: 'CircularProgressIndicator',
+        useCase: _i1.WidgetbookUseCase(
+          name: 'CircularProgressIndicator',
+          builder: _i2.circularProgressIndicator,
+        ),
+      )
+    ],
+  ),
   _i1.WidgetbookFolder(
     name: 'ui',
     children: [
@@ -24,14 +36,14 @@ final directories = <_i1.WidgetbookNode>[
             name: 'PokemonDetailScreen',
             useCase: _i1.WidgetbookUseCase(
               name: 'DetailScreen',
-              builder: _i2.detailSscreen,
+              builder: _i3.detailSscreen,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'PokemonListScreen',
             useCase: _i1.WidgetbookUseCase(
               name: 'ListScreen',
-              builder: _i2.listSscreen,
+              builder: _i3.listSscreen,
             ),
           ),
         ],
@@ -44,16 +56,16 @@ final directories = <_i1.WidgetbookNode>[
             useCases: [
               _i1.WidgetbookUseCase(
                 name: 'EvolutionWidget1',
-                builder: _i3.evolutionWidget1,
+                builder: _i2.evolutionWidget1,
               ),
               _i1.WidgetbookUseCase(
                 name: 'EvolutionWidget2',
-                builder: _i3.evolutionWidget2,
+                builder: _i2.evolutionWidget2,
               ),
             ],
           )
         ],
       ),
     ],
-  )
+  ),
 ];

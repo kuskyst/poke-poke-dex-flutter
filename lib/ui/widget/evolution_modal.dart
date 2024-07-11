@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class EvolutionWidget extends StatelessWidget {
+class EvolutionModal extends StatelessWidget {
 
   final String image;
 
-  const EvolutionWidget({super.key, required this.image});
+  const EvolutionModal({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {

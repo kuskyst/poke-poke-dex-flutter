@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
@@ -20,7 +21,7 @@ class PokemonListScreen extends HookConsumerWidget {
         title: const Text('Pokemon List'),
       ),
       body: vm.pokemons.isEmpty
-      ? const Center(child: CircularProgressIndicator())
+      ? const ProgressBar()
       : ListView.builder(
         itemCount: vm.pokemons.length,
         itemBuilder: (context, index) {
