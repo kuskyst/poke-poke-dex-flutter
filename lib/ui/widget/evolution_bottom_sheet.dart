@@ -8,9 +8,11 @@ class EvolutionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: Column(
+    return SizedBox(
+      height: 240,
+      child: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Image.network(image, width: 120, height: 120),
           ElevatedButton(
