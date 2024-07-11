@@ -60,6 +60,9 @@ class PokemonDetailScreen extends HookConsumerWidget {
                         onPressed: () {
                           showModalBottomSheet(
                             context: context,
+                            showDragHandle: true,
+                            useSafeArea: true,
+                            backgroundColor: Colors.white,
                             builder: (BuildContext context) {
                               return EvolutionWidget(image: vm.pokemon.evolutions!.first!.image);
                             }
