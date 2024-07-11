@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:poke_poke_dex/ui/widget/evolution_bottom_sheet.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
@@ -54,7 +56,17 @@ class PokemonDetailScreen extends HookConsumerWidget {
                     const Text('evolutions.'),
                     vm.pokemon.evolutions!.isEmpty
                     ? const Text('-')
-                    : Text(vm.pokemon.evolutions!.map((v) => v!.name).toList().toString()),
+                    : TextButton(
+                        child: Text(vm.pokemon.evolutions!.first!.name),
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return EvolutionWidget(image: vm.pokemon.evolutions!.first!.image);
+                            }
+                          );
+                        }
+                      )
                   ]
                 ),
               ]

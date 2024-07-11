@@ -33,7 +33,7 @@ class PokemonListScreen extends HookConsumerWidget {
             title: Text('No. ${vm.pokemons[index].number}'),
             subtitle: Text(vm.pokemons[index].name),
             trailing: const Text('＞'),
-            onTap: () { 
+            onTap: () {
               context.push('/detail', extra: vm.pokemons[index].id);
             }
           );
