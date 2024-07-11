@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 class EvolutionWidget extends StatelessWidget {
 
   final String image;
-  final close;
 
-  const EvolutionWidget({super.key, required this.image, this.close});
+  const EvolutionWidget({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
