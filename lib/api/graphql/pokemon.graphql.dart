@@ -307,6 +307,49 @@ const documentNodeQueryPokemon = DocumentNode(definitions: [
             selectionSet: null,
           ),
           FieldNode(
+            name: NameNode(value: 'evolutions'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FieldNode(
+                name: NameNode(value: 'id'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: 'number'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: 'name'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: 'image'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: '__typename'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+            ]),
+          ),
+          FieldNode(
             name: NameNode(value: '__typename'),
             alias: null,
             arguments: [],
@@ -482,6 +525,7 @@ class Query$Pokemon$pokemon {
     this.image,
     this.classification,
     this.types,
+    this.evolutions,
     this.$__typename = 'Pokemon',
   });
 
@@ -492,6 +536,7 @@ class Query$Pokemon$pokemon {
     final l$image = json['image'];
     final l$classification = json['classification'];
     final l$types = json['types'];
+    final l$evolutions = json['evolutions'];
     final l$$__typename = json['__typename'];
     return Query$Pokemon$pokemon(
       id: (l$id as String),
@@ -500,6 +545,12 @@ class Query$Pokemon$pokemon {
       image: (l$image as String?),
       classification: (l$classification as String?),
       types: (l$types as List<dynamic>?)?.map((e) => (e as String?)).toList(),
+      evolutions: (l$evolutions as List<dynamic>?)
+          ?.map((e) => e == null
+              ? null
+              : Query$Pokemon$pokemon$evolutions.fromJson(
+                  (e as Map<String, dynamic>)))
+          .toList(),
       $__typename: (l$$__typename as String),
     );
   }
@@ -515,6 +566,8 @@ class Query$Pokemon$pokemon {
   final String? classification;
 
   final List<String?>? types;
+
+  final List<Query$Pokemon$pokemon$evolutions?>? evolutions;
 
   final String $__typename;
 
@@ -532,6 +585,8 @@ class Query$Pokemon$pokemon {
     _resultData['classification'] = l$classification;
     final l$types = types;
     _resultData['types'] = l$types?.map((e) => e).toList();
+    final l$evolutions = evolutions;
+    _resultData['evolutions'] = l$evolutions?.map((e) => e?.toJson()).toList();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -545,6 +600,7 @@ class Query$Pokemon$pokemon {
     final l$image = image;
     final l$classification = classification;
     final l$types = types;
+    final l$evolutions = evolutions;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$id,
@@ -553,6 +609,7 @@ class Query$Pokemon$pokemon {
       l$image,
       l$classification,
       l$types == null ? null : Object.hashAll(l$types.map((v) => v)),
+      l$evolutions == null ? null : Object.hashAll(l$evolutions.map((v) => v)),
       l$$__typename,
     ]);
   }
@@ -606,6 +663,22 @@ class Query$Pokemon$pokemon {
     } else if (l$types != lOther$types) {
       return false;
     }
+    final l$evolutions = evolutions;
+    final lOther$evolutions = other.evolutions;
+    if (l$evolutions != null && lOther$evolutions != null) {
+      if (l$evolutions.length != lOther$evolutions.length) {
+        return false;
+      }
+      for (int i = 0; i < l$evolutions.length; i++) {
+        final l$evolutions$entry = l$evolutions[i];
+        final lOther$evolutions$entry = lOther$evolutions[i];
+        if (l$evolutions$entry != lOther$evolutions$entry) {
+          return false;
+        }
+      }
+    } else if (l$evolutions != lOther$evolutions) {
+      return false;
+    }
     final l$$__typename = $__typename;
     final lOther$$__typename = other.$__typename;
     if (l$$__typename != lOther$$__typename) {
@@ -639,8 +712,15 @@ abstract class CopyWith$Query$Pokemon$pokemon<TRes> {
     String? image,
     String? classification,
     List<String?>? types,
+    List<Query$Pokemon$pokemon$evolutions?>? evolutions,
     String? $__typename,
   });
+  TRes evolutions(
+      Iterable<Query$Pokemon$pokemon$evolutions?>? Function(
+              Iterable<
+                  CopyWith$Query$Pokemon$pokemon$evolutions<
+                      Query$Pokemon$pokemon$evolutions>?>?)
+          _fn);
 }
 
 class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
@@ -663,6 +743,7 @@ class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
     Object? image = _undefined,
     Object? classification = _undefined,
     Object? types = _undefined,
+    Object? evolutions = _undefined,
     Object? $__typename = _undefined,
   }) =>
       _then(Query$Pokemon$pokemon(
@@ -675,10 +756,27 @@ class _CopyWithImpl$Query$Pokemon$pokemon<TRes>
             : (classification as String?),
         types:
             types == _undefined ? _instance.types : (types as List<String?>?),
+        evolutions: evolutions == _undefined
+            ? _instance.evolutions
+            : (evolutions as List<Query$Pokemon$pokemon$evolutions?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
+  TRes evolutions(
+          Iterable<Query$Pokemon$pokemon$evolutions?>? Function(
+                  Iterable<
+                      CopyWith$Query$Pokemon$pokemon$evolutions<
+                          Query$Pokemon$pokemon$evolutions>?>?)
+              _fn) =>
+      call(
+          evolutions: _fn(_instance.evolutions?.map((e) => e == null
+              ? null
+              : CopyWith$Query$Pokemon$pokemon$evolutions(
+                  e,
+                  (i) => i,
+                )))?.toList());
 }
 
 class _CopyWithStubImpl$Query$Pokemon$pokemon<TRes>
@@ -694,6 +792,186 @@ class _CopyWithStubImpl$Query$Pokemon$pokemon<TRes>
     String? image,
     String? classification,
     List<String?>? types,
+    List<Query$Pokemon$pokemon$evolutions?>? evolutions,
+    String? $__typename,
+  }) =>
+      _res;
+
+  evolutions(_fn) => _res;
+}
+
+class Query$Pokemon$pokemon$evolutions {
+  Query$Pokemon$pokemon$evolutions({
+    required this.id,
+    this.number,
+    this.name,
+    this.image,
+    this.$__typename = 'Pokemon',
+  });
+
+  factory Query$Pokemon$pokemon$evolutions.fromJson(Map<String, dynamic> json) {
+    final l$id = json['id'];
+    final l$number = json['number'];
+    final l$name = json['name'];
+    final l$image = json['image'];
+    final l$$__typename = json['__typename'];
+    return Query$Pokemon$pokemon$evolutions(
+      id: (l$id as String),
+      number: (l$number as String?),
+      name: (l$name as String?),
+      image: (l$image as String?),
+      $__typename: (l$$__typename as String),
+    );
+  }
+
+  final String id;
+
+  final String? number;
+
+  final String? name;
+
+  final String? image;
+
+  final String $__typename;
+
+  Map<String, dynamic> toJson() {
+    final _resultData = <String, dynamic>{};
+    final l$id = id;
+    _resultData['id'] = l$id;
+    final l$number = number;
+    _resultData['number'] = l$number;
+    final l$name = name;
+    _resultData['name'] = l$name;
+    final l$image = image;
+    _resultData['image'] = l$image;
+    final l$$__typename = $__typename;
+    _resultData['__typename'] = l$$__typename;
+    return _resultData;
+  }
+
+  @override
+  int get hashCode {
+    final l$id = id;
+    final l$number = number;
+    final l$name = name;
+    final l$image = image;
+    final l$$__typename = $__typename;
+    return Object.hashAll([
+      l$id,
+      l$number,
+      l$name,
+      l$image,
+      l$$__typename,
+    ]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Query$Pokemon$pokemon$evolutions) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$number = number;
+    final lOther$number = other.number;
+    if (l$number != lOther$number) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (l$name != lOther$name) {
+      return false;
+    }
+    final l$image = image;
+    final lOther$image = other.image;
+    if (l$image != lOther$image) {
+      return false;
+    }
+    final l$$__typename = $__typename;
+    final lOther$$__typename = other.$__typename;
+    if (l$$__typename != lOther$$__typename) {
+      return false;
+    }
+    return true;
+  }
+}
+
+extension UtilityExtension$Query$Pokemon$pokemon$evolutions
+    on Query$Pokemon$pokemon$evolutions {
+  CopyWith$Query$Pokemon$pokemon$evolutions<Query$Pokemon$pokemon$evolutions>
+      get copyWith => CopyWith$Query$Pokemon$pokemon$evolutions(
+            this,
+            (i) => i,
+          );
+}
+
+abstract class CopyWith$Query$Pokemon$pokemon$evolutions<TRes> {
+  factory CopyWith$Query$Pokemon$pokemon$evolutions(
+    Query$Pokemon$pokemon$evolutions instance,
+    TRes Function(Query$Pokemon$pokemon$evolutions) then,
+  ) = _CopyWithImpl$Query$Pokemon$pokemon$evolutions;
+
+  factory CopyWith$Query$Pokemon$pokemon$evolutions.stub(TRes res) =
+      _CopyWithStubImpl$Query$Pokemon$pokemon$evolutions;
+
+  TRes call({
+    String? id,
+    String? number,
+    String? name,
+    String? image,
+    String? $__typename,
+  });
+}
+
+class _CopyWithImpl$Query$Pokemon$pokemon$evolutions<TRes>
+    implements CopyWith$Query$Pokemon$pokemon$evolutions<TRes> {
+  _CopyWithImpl$Query$Pokemon$pokemon$evolutions(
+    this._instance,
+    this._then,
+  );
+
+  final Query$Pokemon$pokemon$evolutions _instance;
+
+  final TRes Function(Query$Pokemon$pokemon$evolutions) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? id = _undefined,
+    Object? number = _undefined,
+    Object? name = _undefined,
+    Object? image = _undefined,
+    Object? $__typename = _undefined,
+  }) =>
+      _then(Query$Pokemon$pokemon$evolutions(
+        id: id == _undefined || id == null ? _instance.id : (id as String),
+        number: number == _undefined ? _instance.number : (number as String?),
+        name: name == _undefined ? _instance.name : (name as String?),
+        image: image == _undefined ? _instance.image : (image as String?),
+        $__typename: $__typename == _undefined || $__typename == null
+            ? _instance.$__typename
+            : ($__typename as String),
+      ));
+}
+
+class _CopyWithStubImpl$Query$Pokemon$pokemon$evolutions<TRes>
+    implements CopyWith$Query$Pokemon$pokemon$evolutions<TRes> {
+  _CopyWithStubImpl$Query$Pokemon$pokemon$evolutions(this._res);
+
+  TRes _res;
+
+  call({
+    String? id,
+    String? number,
+    String? name,
+    String? image,
     String? $__typename,
   }) =>
       _res;

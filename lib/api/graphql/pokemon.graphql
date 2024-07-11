@@ -6,5 +6,11 @@ query Pokemon($id: String!) {
     image
     classification
     types
+    evolutions {
+      id
+      number
+      name
+      image
+    }
   }
 }

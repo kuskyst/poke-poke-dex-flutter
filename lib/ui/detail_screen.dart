@@ -46,7 +46,16 @@ class PokemonDetailScreen extends HookConsumerWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [ const Text('types.'), Text(vm.pokemon.types.toString()) ]
+                  children: [ const Text('types.'), Text(vm.pokemon.types!.join(' / ')) ]
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('evolutions.'),
+                    vm.pokemon.evolutions!.isEmpty
+                    ? const Text('-')
+                    : Text(vm.pokemon.evolutions!.map((v) => v!.name).toList().toString()),
+                  ]
                 ),
               ]
             ))
