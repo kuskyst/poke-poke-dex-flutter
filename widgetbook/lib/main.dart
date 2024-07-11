@@ -17,7 +17,7 @@ class WidgetbookApp extends StatelessWidget {
     return Widgetbook(
       directories: directories,
       appBuilder: (context, child) => ColoredBox(
-        color: const Color(0xFF404040),
+        color: Colors.white,
         child: child,
       ),
       integrations: [ WidgetbookCloudIntegration() ],
@@ -29,7 +29,7 @@ class WidgetbookApp extends StatelessWidget {
             Devices.ios.iPhone13,
             Devices.android.samsungGalaxyA50
           ],
-          initialDevice: Devices.ios.iPhone13,
+          initialDevice: Devices.ios.iPhoneSE,
         )
       ]
     );
