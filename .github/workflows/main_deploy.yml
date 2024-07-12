@@ -1,4 +1,4 @@
-name: Flutter Web Build and Deploy
+name: poke-poke-dex-flutter Web Build and Deploy
 
 on:
   push:
