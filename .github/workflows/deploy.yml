@@ -31,7 +31,7 @@ jobs:
       # --base-hrefには、リポジトリ名
       - name: build web
         run: |
-          flutter build web poke-poke-dex-flutter/widgetbook/
+          flutter build web --base-href=poke-poke-dex-flutter/widgetbook/
 
       - uses: actions/upload-pages-artifact@v1
         with:
