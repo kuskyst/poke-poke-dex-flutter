@@ -28,8 +28,7 @@ class WidgetbookApp extends StatelessWidget {
             Devices.ios.iPhoneSE,
             Devices.ios.iPhone13,
             Devices.android.samsungGalaxyA50
-          ],
-          initialDevice: Devices.ios.iPhoneSE,
+          ]
         )
       ]
     );
