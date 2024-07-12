@@ -1,6 +1,8 @@
 # poke-poke-dex-flutter
 ポケモン図鑑 by POKEAPI 
 
+https://kuskyst.github.io/poke-poke-dex-flutter/
+
 | # | |
 | ---- | ---- |
 | Language| Dart (Flutter) |
