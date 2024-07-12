@@ -18,7 +18,7 @@ jobs:
       - name: "Read flutter version from fvm config"
         id: flutter_info
         run: |
-          FLUTTER_VERSION=3.4.3
+          FLUTTER_VERSION=4.0.0
           echo "FLUTTER_VERSION=$FLUTTER_VERSION" >> $GITHUB_ENV
         shell: bash
 
