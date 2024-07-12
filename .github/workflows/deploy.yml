@@ -13,7 +13,7 @@ jobs:
       id-token: write
       contents: write
     steps:
-      - uses: actions/checkout@4
+      - uses: actions/checkout@v3.6.0
 
       - name: "Read flutter version from fvm config"
         id: flutter_info
