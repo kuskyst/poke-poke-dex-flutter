@@ -53,6 +53,13 @@ final directories = <_i1.WidgetbookNode>[
             ],
           ),
           _i1.WidgetbookLeafComponent(
+            name: 'LikeButtons',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'LikesButton',
+              builder: _i3.likesButton,
+            ),
+          ),
+          _i1.WidgetbookLeafComponent(
             name: 'PrimaryButton',
             useCase: _i1.WidgetbookUseCase(
               name: 'PrimaryButton',
