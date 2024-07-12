@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poke_poke_dex/ui/widget/primary_button.dart';
 
 class EvolutionModal extends StatelessWidget {
 
@@ -13,9 +14,9 @@ class EvolutionModal extends StatelessWidget {
       child: Center(child: Column(
         children: [
           Image.network(image, width: 120, height: 120),
-          ElevatedButton(
-            child: const Text('close'),
-            onPressed: () { Navigator.pop(context); },
+          PrimaryButton(
+            text: 'close',
+            callback: () { Navigator.pop(context); },
           ),
         ]
       ))

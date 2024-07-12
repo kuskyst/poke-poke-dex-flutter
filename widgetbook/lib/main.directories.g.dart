@@ -53,6 +53,13 @@ final directories = <_i1.WidgetbookNode>[
             ],
           ),
           _i1.WidgetbookLeafComponent(
+            name: 'PrimaryButton',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'PrimaryButton',
+              builder: _i3.primaryButton,
+            ),
+          ),
+          _i1.WidgetbookLeafComponent(
             name: 'ProgressBar',
             useCase: _i1.WidgetbookUseCase(
               name: 'ProgressBar',
