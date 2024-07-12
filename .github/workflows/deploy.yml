@@ -1,0 +1,52 @@
+name: deploy widgetbook
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: "Read flutter version from fvm config"
+        id: flutter_info
+        run: |
+          FLUTTER_VERSION=$(jq -r '.flutterSdkVersion' ./.fvm/fvm_config.json)
+          echo "FLUTTER_VERSION=$FLUTTER_VERSION" >> $GITHUB_ENV
+        shell: bash
+
+      - name: "Setup Flutter"
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      # --base-hrefには、リポジトリ名
+      - name: build web
+        run: |
+          flutter build web poke-poke-dex-flutter/widgetbook/
+
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build/web
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
