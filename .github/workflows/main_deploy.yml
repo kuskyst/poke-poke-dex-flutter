@@ -48,20 +48,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
 
-      - name: Notify Pull Request
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const pullRequestNumber = context.issue.number;
-            const repositoryOwner = context.repo.owner;
-            const repositoryName = context.repo.repo;
-            const pageUrl = `https://${repositoryOwner}.github.io/${repositoryName}/`;
-            const comment = `Preview URL for this pull request: ${pageUrl}`;
-            github.issues.createComment({
-              owner: repositoryOwner,
-              repo: repositoryName,
-              issue_number: pullRequestNumber,
-              body: comment
-            });
-
