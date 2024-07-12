@@ -41,7 +41,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url + '/widgetbook' }}
+      url: ${{ steps.deployment.outputs.page_url }}  + '/widgetbook'
     runs-on: ubuntu-latest
     needs: build
     steps:
