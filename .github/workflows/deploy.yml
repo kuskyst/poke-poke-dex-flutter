@@ -1,52 +1,29 @@
-name: deploy widgetbook
+name: Flutter Build and Deploy
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
-
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-      contents: write
+
     steps:
-      - uses: actions/checkout@v3.6.0
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: "Read flutter version from fvm config"
-        id: flutter_info
-        run: |
-          FLUTTER_VERSION="3.22.2"
-          echo "FLUTTER_VERSION=$FLUTTER_VERSION" >> $GITHUB_ENV
-        shell: bash
-
-      - name: "Setup Flutter"
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          cache: true
+          flutter-version: '3.22.2'
+      - name: Get packages
+        run: flutter pub get
 
-      # --base-hrefには、リポジトリ名
-      - name: build web
-        run: |
-          flutter build web --base-href=poke_poke_dex_flutter/widgetbook/
+      - name: Build web
+        run: flutter build web --release
 
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./build/web
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
