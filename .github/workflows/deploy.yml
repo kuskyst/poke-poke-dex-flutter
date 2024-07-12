@@ -30,7 +30,7 @@ jobs:
           cache: true
 
       - run: flutter pub get
-      - run: flutter build web --web-renderer html
+      - run: flutter build web --web-renderer html --base-href="/poke-poke-dex-flutter/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
