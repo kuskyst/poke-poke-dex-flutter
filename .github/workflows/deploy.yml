@@ -30,7 +30,7 @@ jobs:
           cache: true
 
       - run: flutter pub get
-      - run: flutter build web --web-renderer html
+      - run: flutter build web --web-renderer html --base-href /${{ steps.version.outputs.repository }}/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
