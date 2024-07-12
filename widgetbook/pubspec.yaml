@@ -3,7 +3,7 @@ publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: '3.22.2'
+  sdk: '3.4.3'
 
 dependencies:
   flutter:
