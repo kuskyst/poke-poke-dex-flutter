@@ -31,16 +31,12 @@ class LikeButtons extends StatelessWidget {
               color: isLiked ? Colors.yellow : Colors.grey,
             );
           },
-          onTap: (isLiked) async {
-            return !isLiked;
-          },
+          onTap: starCallback,
         ),
         LikeButton(
           size: 40,
           isLiked: heart,
-          onTap: (isLiked) async {
-            return !isLiked;
-          }
+          onTap: heartCallback
         )
       ]
     );
