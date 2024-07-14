@@ -3,6 +3,7 @@ import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
 import 'package:poke_poke_dex/ui/widget/like_buttons.dart';
 import 'package:poke_poke_dex/ui/widget/primary_button.dart';
 import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(name: 'EvolutionWidget1', type: EvolutionModal)
@@ -52,6 +53,9 @@ Widget circularProgressIndicator(BuildContext context) {
 
 @widgetbook.UseCase(name: 'PrimaryButton', type: PrimaryButton)
 Widget primaryButton(BuildContext context) {
+  final button1 = context.knobs.string(label: 'button1', initialValue: 'enabled');
+  final button2 = context.knobs.string(label: 'button2', initialValue: 'disabled');
+
   return Container(
     padding: const EdgeInsets.only(top: 100),
     width: double.infinity,
@@ -59,9 +63,9 @@ Widget primaryButton(BuildContext context) {
     decoration: const BoxDecoration(color: Colors.white),
     child: Column(
       children: [
-        PrimaryButton(text: 'enabled', callback: () =>()),
+        PrimaryButton(text: button1, callback: () =>()),
         const SizedBox(height: 16),
-        const PrimaryButton(text: 'disabled')
+        PrimaryButton(text: button2)
       ]
     )
   );
