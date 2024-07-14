@@ -13,22 +13,22 @@ extension GetMarkCollection on Isar {
   IsarCollection<Mark> get marks => this.collection();
 }
 
-const MarkSchema = CollectionSchema(
+final MarkSchema = CollectionSchema(
   name: r'Mark',
-  id: 1,
+  id: BigInt.parse("3533883685707149477").toInt(),
   properties: {
     r'heart': PropertySchema(
-      id: 0,
+      id: BigInt.parse("0").toInt(),
       name: r'heart',
       type: IsarType.bool,
     ),
     r'inId': PropertySchema(
-      id: 1,
+      id: BigInt.parse("1").toInt(),
       name: r'inId',
       type: IsarType.string,
     ),
     r'star': PropertySchema(
-      id: 2,
+      id: BigInt.parse("2").toInt(),
       name: r'star',
       type: IsarType.bool,
     )
@@ -40,7 +40,7 @@ const MarkSchema = CollectionSchema(
   idName: r'id',
   indexes: {
     r'inId': IndexSchema(
-      id: 2,
+      id: BigInt.parse("-8752359419815086583").toInt(),
       name: r'inId',
       unique: true,
       replace: false,
@@ -58,7 +58,7 @@ const MarkSchema = CollectionSchema(
   getId: _markGetId,
   getLinks: _markGetLinks,
   attach: _markAttach,
-  version: '3.1.0+1',
+  version: '3.1.0',
 );
 
 int _markEstimateSize(
