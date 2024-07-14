@@ -7,44 +7,40 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(name: 'EvolutionWidget1', type: EvolutionModal)
 Widget evolutionWidget1(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Colors.yellow,
-    body: Container(
-      alignment: Alignment.center,
-      child: PrimaryButton(
-        text: 'pikachu',
-        callback: () {
-          showBottomSheet(
-            context: context,
-            showDragHandle: true,
-            builder: (BuildContext context) {
-              return const EvolutionModal(image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png');
-            }
-          );
-        }
-      )
+  return Container(
+    alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.yellow),
+    child: PrimaryButton(
+      text: 'pikachu',
+      callback: () {
+        showBottomSheet(
+          context: context,
+          showDragHandle: true,
+          builder: (BuildContext context) {
+            return const EvolutionModal(image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png');
+          }
+        );
+      }
     )
   );
 }
 
 @widgetbook.UseCase(name: 'EvolutionWidget2', type: EvolutionModal)
 Widget evolutionWidget2(BuildContext context) {
-    return Scaffold(
-    backgroundColor: Colors.blueGrey,
-    body: Container(
-      alignment: Alignment.center,
-      child: PrimaryButton(
-        text: 'mew',
-        callback: () {
-          showBottomSheet(
-            context: context,
-            showDragHandle: true,
-            builder: (BuildContext context) {
-              return const EvolutionModal(image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png');
-            }
-          );
-        }
-      )
+  return Container(
+    alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.blueGrey),
+    child: PrimaryButton(
+      text: 'mew',
+      callback: () {
+        showBottomSheet(
+          context: context,
+          showDragHandle: true,
+          builder: (BuildContext context) {
+            return const EvolutionModal(image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png');
+          }
+        );
+      }
     )
   );
 }
@@ -60,6 +56,7 @@ Widget primaryButton(BuildContext context) {
     padding: const EdgeInsets.only(top: 100),
     width: double.infinity,
     alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.white),
     child: Column(
       children: [
         PrimaryButton(text: 'enabled', callback: () =>()),
@@ -76,6 +73,7 @@ Widget likesButton(BuildContext context) {
     padding: const EdgeInsets.all(100),
     width: double.infinity,
     alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.white),
     child: const Column(
       children: [
         LikeButtons(star: false, heart: false),
