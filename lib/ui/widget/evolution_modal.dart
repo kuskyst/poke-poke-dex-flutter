@@ -19,7 +19,13 @@ class EvolutionModal extends StatelessWidget {
             width: 120,
             height: 120,
             loadingBuilder: (_, child, loadingProgress) {
-              return loadingProgress != null ? const ProgressBar() : child;
+              return loadingProgress != null
+                ? const Center(
+                  heightFactor: 120,
+                  widthFactor: 120,
+                  child: ProgressBar()
+                )
+                : child;
             },
             ),
           PrimaryButton(
