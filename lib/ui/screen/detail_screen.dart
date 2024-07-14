@@ -57,7 +57,8 @@ class PokemonDetailScreen extends HookConsumerWidget {
                     Row(
                       children: [
                         TypeLabel(type: vm.pokemon.types!.first!),
-                        if (vm.pokemon.types!.length ==2) const Text(' / '), TypeLabel(type: vm.pokemon.types!.last!)
+                        if (vm.pokemon.types!.length == 2) const Text(' / '),
+                        if (vm.pokemon.types!.length == 2) TypeLabel(type: vm.pokemon.types!.last!)
                       ]
                     )
                   ]
