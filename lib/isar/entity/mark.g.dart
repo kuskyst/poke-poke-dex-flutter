@@ -15,7 +15,7 @@ extension GetMarkCollection on Isar {
 
 const MarkSchema = CollectionSchema(
   name: r'Mark',
-  id: 3533883685707149477,
+  id: 1,
   properties: {
     r'heart': PropertySchema(
       id: 0,
@@ -40,7 +40,7 @@ const MarkSchema = CollectionSchema(
   idName: r'id',
   indexes: {
     r'inId': IndexSchema(
-      id: -8752359419815086583,
+      id: 2,
       name: r'inId',
       unique: true,
       replace: false,
