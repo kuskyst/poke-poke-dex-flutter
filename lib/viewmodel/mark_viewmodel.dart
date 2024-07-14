@@ -18,9 +18,6 @@ class MarkViewmodel extends ChangeNotifier {
       ? Isar.getInstance() : await isarOpen();
     _mark = (await isar?.marks.filter().inIdMatches(inId).findFirst());
     _mark ??= Mark(inId: inId);
-    print(_mark!.star);
-    print(_mark!.heart);
-    print(_mark!.inId);
   }
 
   Future<void> putMark(Mark mark) async {
