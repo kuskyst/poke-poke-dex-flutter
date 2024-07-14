@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poke_poke_dex/ui/widget/primary_button.dart';
+import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
 
 class EvolutionModal extends StatelessWidget {
 
@@ -13,7 +14,14 @@ class EvolutionModal extends StatelessWidget {
       height: 200,
       child: Center(child: Column(
         children: [
-          Image.network(image, width: 120, height: 120),
+          Image.network(
+            image,
+            width: 120,
+            height: 120,
+            loadingBuilder: (_, child, loadingProgress) {
+              return loadingProgress != null ? const ProgressBar() : child;
+            },
+            ),
           PrimaryButton(
             text: 'close',
             callback: () { Navigator.pop(context); },
