@@ -22,7 +22,6 @@ class WidgetbookApp extends StatelessWidget {
       ),
       integrations: [ WidgetbookCloudIntegration() ],
       addons: [
-        AlignmentAddon(),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhoneSE,
