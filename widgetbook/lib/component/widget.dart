@@ -3,6 +3,7 @@ import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
 import 'package:poke_poke_dex/ui/widget/like_buttons.dart';
 import 'package:poke_poke_dex/ui/widget/primary_button.dart';
 import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
+import 'package:poke_poke_dex/ui/widget/type_label.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -53,9 +54,6 @@ Widget circularProgressIndicator(BuildContext context) {
 
 @widgetbook.UseCase(name: 'PrimaryButton', type: PrimaryButton)
 Widget primaryButton(BuildContext context) {
-  final button1 = context.knobs.string(label: 'button1', initialValue: 'enabled');
-  final button2 = context.knobs.string(label: 'button2', initialValue: 'disabled');
-
   return Container(
     padding: const EdgeInsets.only(top: 100),
     width: double.infinity,
@@ -63,9 +61,9 @@ Widget primaryButton(BuildContext context) {
     decoration: const BoxDecoration(color: Colors.white),
     child: Column(
       children: [
-        PrimaryButton(text: button1, callback: () =>()),
+        PrimaryButton(text: context.knobs.string(label: 'button1', initialValue: 'enabled'), callback: () =>()),
         const SizedBox(height: 16),
-        PrimaryButton(text: button2)
+        PrimaryButton(text: context.knobs.string(label: 'button2', initialValue: 'disabled'))
       ]
     )
   );
@@ -81,8 +79,89 @@ Widget likesButton(BuildContext context) {
     child: const Column(
       children: [
         LikeButtons(star: false, heart: false),
-        SizedBox(height: 40),
+        SizedBox(height: 16),
         LikeButtons(star: true, heart: true),
+      ]
+    )
+  );
+}
+
+@widgetbook.UseCase(name: 'TypeLabel', type: TypeLabel)
+Widget typeLabel(BuildContext context) {
+  final typeList = TypeLabel(type: '').backColor.keys.toList();
+
+  return Container(
+    width: double.infinity,
+    alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.white),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TypeLabel(type: context.knobs.list(label: 'type1', options: typeList, initialOption: 'Normal')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type2', options: typeList, initialOption: 'Fire')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type3', options: typeList, initialOption: 'Water'))
+          ]
+        ),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TypeLabel(type: context.knobs.list(label: 'type4', options: typeList, initialOption: 'Grass')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type5', options: typeList, initialOption: 'Electric')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type6', options: typeList, initialOption: 'Ice'))
+          ]
+        ),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TypeLabel(type: context.knobs.list(label: 'type7', options: typeList, initialOption: 'Fighting')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type8', options: typeList, initialOption: 'Poison')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type9', options: typeList, initialOption: 'Ground'))
+          ]
+        ),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TypeLabel(type: context.knobs.list(label: 'type10', options: typeList, initialOption: 'Flying')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type11', options: typeList, initialOption: 'Psychic')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type12', options: typeList, initialOption: 'Bug'))
+          ]
+        ),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TypeLabel(type: context.knobs.list(label: 'type13', options: typeList, initialOption: 'Rock')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type14', options: typeList, initialOption: 'Ghost')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type15', options: typeList, initialOption: 'Dragon'))
+          ]
+        ),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TypeLabel(type: context.knobs.list(label: 'type16', options: typeList, initialOption: 'Dark')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type17', options: typeList, initialOption: 'Steel')),
+            const SizedBox(width: 30),
+            TypeLabel(type: context.knobs.list(label: 'type18', options: typeList, initialOption: 'Fairy'))
+          ]
+        )
       ]
     )
   );

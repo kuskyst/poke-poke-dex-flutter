@@ -73,6 +73,13 @@ final directories = <_i1.WidgetbookNode>[
               builder: _i3.circularProgressIndicator,
             ),
           ),
+          _i1.WidgetbookLeafComponent(
+            name: 'TypeLabel',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'TypeLabel',
+              builder: _i3.typeLabel,
+            ),
+          ),
         ],
       ),
     ],

@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
 import 'package:poke_poke_dex/ui/widget/like_buttons.dart';
 import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
+import 'package:poke_poke_dex/ui/widget/type_label.dart';
 import 'package:poke_poke_dex/viewmodel/mark_viewmodel.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
@@ -51,7 +52,15 @@ class PokemonDetailScreen extends HookConsumerWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [ const Text('types.'), Text(vm.pokemon.types!.join(' / ')) ]
+                  children: [
+                    const Text('types.'),
+                    Row(
+                      children: [
+                        TypeLabel(type: vm.pokemon.types!.first!),
+                        if (vm.pokemon.types!.length ==2) const Text(' / '), TypeLabel(type: vm.pokemon.types!.last!)
+                      ]
+                    )
+                  ]
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
