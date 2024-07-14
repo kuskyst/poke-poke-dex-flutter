@@ -12,19 +12,19 @@ class MarkViewmodel extends ChangeNotifier {
   get mark => _mark;
 
   Future<void> fetchMarks(String inId) async {
-    final isar = Isar.getInstance()?.isOpen ?? true
+    final isar = Isar.getInstance()?.isOpen ?? false
       ? Isar.getInstance() : await isarOpen();
-    _mark = (await isar?.marks.filter().inIdMatches(inId).findFirst());
+    _mark = (await isar!.marks.filter().inIdMatches(inId).findFirst());
     _mark ??= Mark(inId: inId);
   }
 
   Future<void> putMark(Mark mark) async {
-    final isar = Isar.getInstance()?.isOpen ?? true
+    final isar = Isar.getInstance()?.isOpen ?? false
       ? Isar.getInstance() : await isarOpen();
-    await isar?.writeTxn(() async {
+    await isar!.writeTxn(() async {
       await isar.marks.put(mark);
     });
-    _mark = mark;
+    fetchMarks(mark.inId);
   }
 
 }
