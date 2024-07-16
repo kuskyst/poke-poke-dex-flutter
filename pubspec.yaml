@@ -34,6 +34,7 @@ dev_dependencies:
       url: https://github.com/Kiruel/isar
       ref: fix/web_build
       path: packages/isar_generator
+  melos: ^3.4.0
 
 dependency_overrides:
   isar_generator:

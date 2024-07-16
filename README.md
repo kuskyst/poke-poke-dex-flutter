@@ -7,6 +7,7 @@ https://kuskyst.github.io/poke-poke-dex-flutter/
 | ---- | ---- |
 | Language| Dart (Flutter) |
 | Architecture | MVVM |
+| CLI | Melos |
 | UI | shimmer, like_button, widgetbook, widgetbook_annotation, widgetbook_generator |
 | Transition | go_router |
 | State | hooks_riverpod |
