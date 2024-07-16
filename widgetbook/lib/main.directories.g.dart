@@ -60,6 +60,13 @@ final directories = <_i1.WidgetbookNode>[
             ),
           ),
           _i1.WidgetbookLeafComponent(
+            name: 'ListShimmer',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'ListShimmer',
+              builder: _i3.listShimmer,
+            ),
+          ),
+          _i1.WidgetbookLeafComponent(
             name: 'PrimaryButton',
             useCase: _i1.WidgetbookUseCase(
               name: 'PrimaryButton',

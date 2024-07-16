@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
 import 'package:poke_poke_dex/ui/widget/like_buttons.dart';
+import 'package:poke_poke_dex/ui/widget/list_shimmer.dart';
 import 'package:poke_poke_dex/ui/widget/primary_button.dart';
 import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
 import 'package:poke_poke_dex/ui/widget/type_label.dart';
@@ -66,6 +67,16 @@ Widget primaryButton(BuildContext context) {
         PrimaryButton(text: context.knobs.string(label: 'button2', initialValue: 'disabled'))
       ]
     )
+  );
+}
+
+@widgetbook.UseCase(name: 'ListShimmer', type: ListShimmer)
+Widget listShimmer(BuildContext context) {
+  return Container(
+    width: double.infinity,
+    alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.white),
+    child: ListShimmer()
   );
 }
 
