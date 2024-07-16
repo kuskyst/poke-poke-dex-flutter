@@ -13,7 +13,7 @@ https://kuskyst.github.io/poke-poke-dex-flutter/
 | Transition | go_router |
 | State | hooks_riverpod |
 | Asynchronous | graphql_flutter, graphql_codegen |
-| LocalDB | isar |
+| LocalDB | isar, isar_generator |
 
 # Image
 <img width=200 src="https://github.com/user-attachments/assets/6301407c-dfc7-4795-b9fb-091459b9cdd9">
