@@ -39,6 +39,13 @@ final directories = <_i1.WidgetbookNode>[
       _i1.WidgetbookFolder(
         name: 'widget',
         children: [
+          _i1.WidgetbookLeafComponent(
+            name: 'DetailShimmer',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'DetailShimmer',
+              builder: _i3.detailShimmer,
+            ),
+          ),
           _i1.WidgetbookComponent(
             name: 'EvolutionModal',
             useCases: [
