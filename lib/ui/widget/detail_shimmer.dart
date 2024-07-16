@@ -27,11 +27,11 @@ class DetailShimmer extends StatelessWidget {
                   children: [ 
                     const Text('No.'),
                     Container(
-                      height: 20,
-                      width: 20,
+                      height: 12,
+                      width: 120,
                       decoration: ShapeDecoration(
                         color: Colors.grey[400],
-                        shape: const CircleBorder()
+                        shape: const RoundedRectangleBorder()
                       )
                     ),
                   ]
@@ -41,11 +41,11 @@ class DetailShimmer extends StatelessWidget {
                   children: [
                     const Text('name.'),
                     Container(
-                      height: 20,
-                      width: 20,
+                      height: 12,
+                      width: 120,
                       decoration: ShapeDecoration(
                         color: Colors.grey[400],
-                        shape: const CircleBorder()
+                        shape: const RoundedRectangleBorder()
                       )
                     ),
                   ]
@@ -55,11 +55,11 @@ class DetailShimmer extends StatelessWidget {
                   children: [
                     const Text('classification.'),
                     Container(
-                      height: 20,
-                      width: 20,
+                      height: 12,
+                      width: 120,
                       decoration: ShapeDecoration(
                         color: Colors.grey[400],
-                        shape: const CircleBorder()
+                        shape: const RoundedRectangleBorder()
                       )
                     ),
                   ]
@@ -69,11 +69,11 @@ class DetailShimmer extends StatelessWidget {
                   children: [
                     const Text('types.'),
                     Container(
-                      height: 20,
-                      width: 20,
+                      height: 12,
+                      width: 120,
                       decoration: ShapeDecoration(
                         color: Colors.grey[400],
-                        shape: const CircleBorder()
+                        shape: const RoundedRectangleBorder()
                       )
                     ),
                   ]
@@ -83,11 +83,11 @@ class DetailShimmer extends StatelessWidget {
                   children: [
                     const Text('evolutions.'),
                     Container(
-                      height: 20,
-                      width: 20,
+                      height: 12,
+                      width: 120,
                       decoration: ShapeDecoration(
                         color: Colors.grey[400],
-                        shape: const CircleBorder()
+                        shape: const RoundedRectangleBorder()
                       )
                     ),
                   ]
