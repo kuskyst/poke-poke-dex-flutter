@@ -4,7 +4,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:poke_poke_dex/ui/widget/list_shimmer.dart';
 
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
-import 'package:shimmer/shimmer.dart';
 
 class PokemonListScreen extends HookConsumerWidget {
 

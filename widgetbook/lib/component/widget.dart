@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poke_poke_dex/ui/widget/detail_shimmer.dart';
 import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
 import 'package:poke_poke_dex/ui/widget/like_buttons.dart';
 import 'package:poke_poke_dex/ui/widget/list_shimmer.dart';
@@ -77,6 +78,16 @@ Widget listShimmer(BuildContext context) {
     alignment: Alignment.center,
     decoration: const BoxDecoration(color: Colors.white),
     child: ListShimmer()
+  );
+}
+
+@widgetbook.UseCase(name: 'DetailShimmer', type: DetailShimmer)
+Widget detailShimmer(BuildContext context) {
+  return Container(
+    width: double.infinity,
+    alignment: Alignment.center,
+    decoration: const BoxDecoration(color: Colors.white),
+    child: DetailShimmer()
   );
 }
 

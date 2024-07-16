@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:poke_poke_dex/ui/widget/detail_shimmer.dart';
 import 'package:poke_poke_dex/ui/widget/evolution_modal.dart';
 import 'package:poke_poke_dex/ui/widget/like_buttons.dart';
-import 'package:poke_poke_dex/ui/widget/progress_bar.dart';
 import 'package:poke_poke_dex/ui/widget/type_label.dart';
 import 'package:poke_poke_dex/viewmodel/mark_viewmodel.dart';
 
@@ -31,7 +31,7 @@ class PokemonDetailScreen extends HookConsumerWidget {
         title: const Text('Pokemon Detail'),
       ),
       body: vm.pokemon.id.isEmpty || vm2.mark == null
-      ? const ProgressBar()
+      ? DetailShimmer()
       : Padding(padding: const EdgeInsets.all(20), child: Center(
         child: Column(
           children: [
