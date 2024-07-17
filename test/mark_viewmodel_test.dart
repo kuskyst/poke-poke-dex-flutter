@@ -12,7 +12,7 @@ void main() {
     late Directory dir;
     final vm = MarkViewmodel();
 
-    setUpAll(() async {
+    setUp(() async {
       // TestWidgetsFlutterBinding.ensureInitialized();
       await Isar.initializeIsarCore(download: true);
 
@@ -94,7 +94,7 @@ void main() {
       expect(vm.mark.heart, false);
     });
 
-    tearDownAll(() async {
+    tearDown(() async {
       await isar.writeTxn(() async {
         await isar.clear();
       });
