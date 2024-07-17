@@ -72,8 +72,8 @@ void main() {
       await vm.fetchMarks('x3');
       await vm.putMark(
         vm.mark
-        ..star = true
-        ..heart = true
+          ..star = true
+          ..heart = true
     );
       expect(vm.mark.id is Id, true);
       expect(vm.mark.inId, 'x3');
@@ -85,8 +85,8 @@ void main() {
       await vm.fetchMarks('x3');
       await vm.putMark(
         vm.mark
-        ..star = false
-        ..heart = false
+          ..star = false
+          ..heart = false
     );
       expect(vm.mark.id is Id, true);
       expect(vm.mark.inId, 'x3');
