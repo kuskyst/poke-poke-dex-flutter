@@ -74,7 +74,7 @@ void main() {
         vm.mark
           ..star = true
           ..heart = true
-    );
+      );
       expect(vm.mark.id is Id, true);
       expect(vm.mark.inId, 'x3');
       expect(vm.mark.star, true);
@@ -87,7 +87,7 @@ void main() {
         vm.mark
           ..star = false
           ..heart = false
-    );
+      );
       expect(vm.mark.id is Id, true);
       expect(vm.mark.inId, 'x3');
       expect(vm.mark.star, false);
