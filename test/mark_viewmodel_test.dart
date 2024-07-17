@@ -95,6 +95,9 @@ void main() {
     });
 
     tearDownAll(() async {
+      await isar.writeTxn(() async {
+        await isar.clear();
+      });
       await isar.close();
       await dir.delete(recursive: true);
     });
