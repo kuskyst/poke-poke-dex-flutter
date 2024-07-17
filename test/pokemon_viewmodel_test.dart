@@ -43,8 +43,6 @@ void main() {
       expect(vm.pokemon.classification?.isEmpty ?? true, true);
       expect(vm.pokemon.types?.isEmpty ?? true, true);
       expect(vm.pokemon.evolutions?.isEmpty ?? true, true);
-
-
     });
 
     test('pokemon 1', () async {
