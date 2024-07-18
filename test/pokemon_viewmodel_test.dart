@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:poke_poke_dex/viewmodel/pokemon_viewmodel.dart';
 
-
 void main() {
   group('pokemon_viewmodel_list', () {
 
