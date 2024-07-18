@@ -20,10 +20,6 @@ void main() {
       // expect(vm.pokemons.length, 151);
     });
 
-    tearDownAll(() async {
-
-    });
-
   });
 
     group('pokemon_viewmodel_detail', () {
@@ -46,10 +42,6 @@ void main() {
 
     test('pokemon 1', () async {
       // await vm.fetchPokemon('');
-    });
-
-    tearDownAll(() async {
-
     });
 
   });
