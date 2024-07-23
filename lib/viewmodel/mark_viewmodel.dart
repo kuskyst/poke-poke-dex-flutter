@@ -20,7 +20,6 @@ class MarkViewmodel extends ChangeNotifier {
     } else {
       _mark = Mark(inId: inId);
     }
-    
   }
 
   Future<void> putMark(Mark mark) async {
